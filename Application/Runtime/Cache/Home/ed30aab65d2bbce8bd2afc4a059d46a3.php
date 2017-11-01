@@ -54,6 +54,13 @@
 		<form id="ff" method="post">
 			<table cellpadding="5">
 				<tr>
+					<td>资产编号：</td>
+					<td>
+						<input id="sID" class="easyui-combobox" type="text" name="sID" style="width:200px;"
+							valueField="id" 
+							textField="id" 
+							url="<?php echo U('Allocation/getIdData');?>">
+					</td>
 					<td>类型：</td>
 					<td>
 						<input id="sType" class="easyui-combobox" name="sType" style="width:200px"
@@ -72,10 +79,6 @@
 					<td>型号：</td>
 					<td>
 						<input id="sModel" class="easyui-textbox" type="text" name="sModel" style="width:200px"></input>
-					</td>
-					<td>序列号：</td>
-					<td>
-						<input id="sNumber" class="easyui-textbox" type="text" name="sNumber" style="width:200px"></input>
 					</td>
 					<td>接入网络：</td>
 					<td>
@@ -135,6 +138,7 @@
 		pagination="true">
 		<thead>
 			<tr>
+				<th data-options="field:'id',width:'80'">资产编号</th>
 				<th data-options="field:'type',width:'80'">类型</th>
 				<th data-options="field:'brand',width:'80'">品牌</th>
 				<th data-options="field:'model',width:'80'">型号</th>
@@ -269,6 +273,7 @@
 	<script>
 	function doSearch(){
 		$('#dg').datagrid('reload',{
+			sID: $('#sID').val(),
 			sType: $('#sType').val(),
 			sBrand: $('#sBrand').val(),
 			sModel: $('#sModel').val(),

@@ -54,12 +54,12 @@
 		<form id="ff" method="post">
 			<table cellpadding="5">
 				<tr>
-					<td>资源编号：</td>
+					<td>资产编号：</td>
 					<td>
-					<input id="sID" class="easyui-combobox" type="text" name="sID" style="width:200px;"
-						valueField="id" 
-						textField="id" 
-						url="<?php echo U('Allocation/getIdData');?>">
+						<input id="sID" class="easyui-combobox" type="text" name="sID" style="width:200px;"
+							valueField="id" 
+							textField="id" 
+							url="<?php echo U('Allocation/getIdData');?>">
 					</td>
 					<td>类型：</td>
 					<td>
@@ -162,7 +162,7 @@
 		singleSelect="true">
 		<thead>
 			<tr>
-				<th data-options="field:'asset_id',width:'40'">资源编号</th>
+				<th data-options="field:'asset_id',width:'40'">资产编号</th>
 				<th data-options="field:'type',width:'40'">类型</th>
 				<th data-options="field:'brand',width:'40'">品牌</th>
 				<th data-options="field:'model',width:'40'">型号</th>

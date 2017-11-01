@@ -16,6 +16,9 @@ class AssetController extends Controller {
 		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 
 		$condition = array();
+		if($_POST['sID']){
+			$condition['id'] = $_POST['sID'];
+		}
 		if($_POST['sType']){
 			$condition['type'] = $_POST['sType'];
 		}
