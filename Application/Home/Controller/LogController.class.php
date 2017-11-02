@@ -19,7 +19,7 @@ class LogController extends Controller {
 			}
 		}
 		
-		$logList = $log->where($condition)->page($page.','.$rows)->select();
+		$logList = $log->where($condition)->order('create_date desc')->page($page.','.$rows)->select();
 		$logArray = array();
 		foreach($logList as $index=>$data){
 			switch ($data['type'])

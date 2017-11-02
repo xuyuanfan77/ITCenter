@@ -61,7 +61,7 @@ class AllocationController extends Controller {
 			$condition['state'] = $_POST['sState'];
 		}
 		
-		$allocationList = $allocation->where($condition)->page($page.','.$rows)->select();
+		$allocationList = $allocation->where($condition)->order('allocation_create_date desc')->page($page.','.$rows)->select();
 		$allocationArray = array();
 		foreach($allocationList as $index=>$data){
 			$data['type'] = $optionArray[$data['type']]['option_name'];
@@ -138,14 +138,18 @@ class AllocationController extends Controller {
     }
 	
 	public function allocationDestroy(){
+		/*记录日志*/
 		$allocation = D('AllocationView');
 		$condition['id'] = $_POST['id'];
 		$allocationData = $allocation->where($condition)->find();
+		$logData['user_name'] = $allocationData['name'];
+		$logData['asset_id'] = $allocationData['asset_id'];
 		$log = M("log");
 		$data['type'] = 1;
-		$data['text'] = '解除（' . $allocationData['name'] . '）对资源（编号：' . $allocationData['asset_id'] . '）的占用';
+		$data['text'] = '删除【（' . $logData['user_name'] . '）占用资产（编号：' . $logData['asset_id'] . '）】';
 		$data['create_date'] = date("Y-m-d H:i:s",time());
 		$log->add($data);
+		/*记录日志*/
 		
 		$allocation = M("allocation");
 		$condition['id'] = $_POST['id'];
@@ -160,14 +164,49 @@ class AllocationController extends Controller {
 		$allocation = M("allocation");
 		$result = json_encode(array('errorMsg'=>'数据存在问题，请检查后输入！'));
 		if($_POST['aOperation']=='add'){
+			/*记录日志*/
+			$user = M("user");
+			$condition['id'] = $_POST['aUserID'];
+			$userData = $user->where($condition)->find();
+			$logData['user_name'] = $userData['name'];
+			$logData['asset_id'] = $_POST['aAssetID'];
+			
+			$log = M("log");
+			$data['type'] = 1;
+			$data['text'] = '添加【（' . $logData['user_name'] . '）占用资产（编号：' . $logData['asset_id'] . '）】';
+			$data['create_date'] = date("Y-m-d H:i:s",time());
+			$log->add($data);
+			/*记录日志*/
+			
 			$allocationData['asset_id'] = $_POST['aAssetID'];
 			$allocationData['user_id'] = $_POST['aUserID'];
 			$allocationData['use_date'] = $_POST['aUseDate'];
 			$allocationData['remark'] = $_POST['aRemark'];
 			$allocationData['create_date'] = date("Y-m-d H:i:s",time()); 
 			$allocation->add($allocationData);
+			
 			$result = json_encode(array('success'=>true,'data'=>$allocationData));
 		}elseif($_POST['aOperation']=='edit'){
+			/*记录日志*/
+			$allocation = D('AllocationView');
+			$condition['id'] = $_POST['aID'];
+			$allocationData = $allocation->where($condition)->find();
+			$logData['user_name1'] = $allocationData['name'];
+			$logData['asset_id1'] = $allocationData['asset_id'];
+			$user = M("user");
+			$condition['id'] = $_POST['aUserID'];
+			$userData = $user->where($condition)->find();
+			$logData['user_name2'] = $userData['name'];
+			$logData['asset_id2'] = $_POST['aAssetID'];
+			
+			$log = M("log");
+			$data['type'] = 1;
+			$data['text'] = '修改【（' . $logData['user_name1'] . '）占用资产（编号：' . $logData['asset_id1'] . '）】为【（' . $logData['user_name2'] . '）占用资产（编号：' . $logData['asset_id2'] . '）】';
+			$data['create_date'] = date("Y-m-d H:i:s",time());
+			$log->add($data);
+			/*记录日志*/
+
+			$allocation = M('Allocation');
 			$allocationData['id'] = $_POST['aID'];
 			$allocationData['asset_id'] = $_POST['aAssetID'];
 			$allocationData['user_id'] = $_POST['aUserID'];
@@ -175,6 +214,7 @@ class AllocationController extends Controller {
 			$allocationData['remark'] = $_POST['aRemark'];
 			$allocationData['create_date'] = date("Y-m-d H:i:s",time());
 			$allocation->save($allocationData);
+
 			$result = json_encode(array('success'=>true));
 		}else{
 			$result = json_encode(array('errorMsg'=>'数据存在问题，请检查后输入！'));

@@ -48,7 +48,7 @@ class AssetController extends Controller {
 			}
 		}
 		
-		$assetList = $asset->where($condition)->order('purchase_date')->page($page.','.$rows)->select();
+		$assetList = $asset->where($condition)->order('create_date desc')->page($page.','.$rows)->select();
 		$assetArray = array();
 		foreach($assetList as $index=>$data){
 			$data['type'] = $optionArray[$data['type']]['option_name'];
@@ -77,6 +77,15 @@ class AssetController extends Controller {
 		$result = json_encode(array('errorMsg'=>'数据存在问题，请检查后输入！'));
 		if($_POST['aOperation']=='add'){
 			if($_POST['aID']){
+				/*记录日志*/
+				$logData['asset_id'] = $_POST['aID'];
+				$log = M("log");
+				$data['type'] = 2;
+				$data['text'] = '添加【资产（编号：' . $logData['asset_id'] . '）】';
+				$data['create_date'] = date("Y-m-d H:i:s",time());
+				$log->add($data);
+				/*记录日志*/
+			
 				$condition['id'] = $_POST['aID'];
 				$assetData = $asset->where($condition)->find();
 				if($assetData){
@@ -100,6 +109,34 @@ class AssetController extends Controller {
 				$result = json_encode(array('errorMsg'=>'ID号不能为空，请检查后输入！'));
 			}
 		}elseif($_POST['aOperation']=='edit'){
+			/*记录日志*/
+			$option = M('option');
+			$optionList = $option->select();
+			$optionArray = array();
+			foreach($optionList as $index=>$optionData){
+				$optionArray[$optionData['id']] = $optionData;
+			}
+			
+			$condition['id'] = $_POST['aID'];
+			$logData = $asset->where($condition)->find();
+			
+			$logData['asset_id'] = $_POST['aID'];
+			$logData['type'] = $optionArray[$logData['type']]['option_name'];
+			$logData['brand'] = $optionArray[$logData['brand']]['option_name'];
+			$logData['model'] = $_POST['aModel'];
+			$logData['number'] = $_POST['aNumber'];
+			$logData['network'] = $optionArray[$logData['network']]['option_name'];
+			$logData['source'] = $optionArray[$logData['source']]['option_name'];
+			$logData['state'] = $optionArray[$logData['state']]['option_name'];	
+			$logData['purchase_date'] = $_POST['aPurchaseDate'];
+			
+			$log = M("log");
+			$data['type'] = 2;
+			$data['text'] = '修改【资产（编号：' . $logData['asset_id'] . '）】为【类型：' . $logData['type'] . '；品牌：' . $logData['brand'] . '；型号：' . $logData['model'] . '；序列号：' . $logData['number'] . '；接入网络：' . $logData['network'] . '；设备来源：' . $logData['source'] . '；设备状态：' . $logData['state'] . '；购置时间：' . $logData['purchase_date'] . '】';
+			$data['create_date'] = date("Y-m-d H:i:s",time());
+			$log->add($data);
+			/*记录日志*/
+			
 			$assetData['id'] = $_POST['aID'];
 			$assetData['type'] = $_POST['aType'];
 			$assetData['brand'] = $_POST['aBrand'];
@@ -134,6 +171,15 @@ class AssetController extends Controller {
 	}
 	
 	public function assetDestroy(){
+		/*记录日志*/
+		$logData['asset_id'] = $_POST['id'];
+		$log = M("log");
+		$data['type'] = 2;
+		$data['text'] = '删除【资产（编号：' . $logData['asset_id'] . '）】';
+		$data['create_date'] = date("Y-m-d H:i:s",time());
+		$log->add($data);
+		/*记录日志*/
+		
 		$asset = M("Asset");
 		$condition['id'] = $_POST['id'];
 		

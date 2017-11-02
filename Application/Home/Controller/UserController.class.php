@@ -31,7 +31,7 @@ class UserController extends Controller {
 			$condition['mobile_phone'] = $_POST['sMobilePhone'];
 		}
 		
-		$userList = $user->where($condition)->page($page.','.$rows)->select();
+		$userList = $user->where($condition)->order('create_date desc')->page($page.','.$rows)->select();
 		$userArray = array();
 		foreach($userList as $index=>$data){
 			$data['department'] = $optionArray[$data['department']]['option_name'];
@@ -62,6 +62,16 @@ class UserController extends Controller {
 		$user = M("user");
 		$result = json_encode(array('errorMsg'=>'数据存在问题，请检查后输入！'));
 		if($_POST['aOperation']=='add'){
+			/*记录日志*/
+			$logData['name'] = $_POST['aName'];
+			
+			$log = M("log");
+			$data['type'] = 3;
+			$data['text'] = '添加【人员（' . $logData['name'] . '）】';
+			$data['create_date'] = date("Y-m-d H:i:s",time());
+			$log->add($data);
+			/*记录日志*/
+		
 			$userData['name'] = $_POST['aName'];
 			$userData['department'] = $_POST['aDepartment'];
 			$userData['job'] = $_POST['aJob'];
@@ -71,6 +81,31 @@ class UserController extends Controller {
 			$user->add($userData);
 			$result = json_encode(array('success'=>true));
 		}elseif($_POST['aOperation']=='edit'){
+			/*记录日志*/
+			$option = M('option');
+			$optionList = $option->select();
+			$optionArray = array();
+			foreach($optionList as $index=>$optionData){
+				$optionArray[$optionData['id']] = $optionData;
+			}
+			
+			$user = M("User");
+			$condition['id'] = $_POST['aID'];
+			$userData = $user->where($condition)->find();
+			$logData['name1'] = $userData['name'];
+			$logData['name2'] = $_POST['aName'];
+			$logData['department'] = $optionArray[$_POST['aDepartment']]['option_name'];
+			$logData['job'] = $optionArray[$_POST['aJob']]['option_name'];
+			$logData['office_phone'] = $_POST['aOfficePhone'];
+			$logData['mobile_phone'] = $_POST['aMobilePhone'];
+			
+			$log = M("log");
+			$data['type'] = 3;
+			$data['text'] = '修改【人员（' . $logData['name1'] . '）】为【' . '姓名：' . $logData['name2'] . '；部门：' . $logData['department'] . '；职务：' . $logData['job'] . '；办公电话：' . $logData['office_phone'] . '；移动电话：' . $logData['mobile_phone'] . '】';
+			$data['create_date'] = date("Y-m-d H:i:s",time());
+			$log->add($data);
+			/*记录日志*/
+			
 			$userData['id'] = $_POST['aID'];
 			$userData['name'] = $_POST['aName'];
 			$userData['department'] = $_POST['aDepartment'];
@@ -101,6 +136,19 @@ class UserController extends Controller {
 	}
 	
 	public function userDestroy(){
+		/*记录日志*/		
+		$user = M("User");
+		$condition['id'] = $_POST['id'];
+		$userData = $user->where($condition)->find();
+		$logData['name'] = $userData['name'];
+		
+		$log = M("log");
+		$data['type'] = 3;
+		$data['text'] = '删除【人员（' . $logData['name'] . '）】';
+		$data['create_date'] = date("Y-m-d H:i:s",time());
+		$log->add($data);
+		/*记录日志*/
+		
 		$user = M("User");
 		$condition['id'] = $_POST['id'];
 		

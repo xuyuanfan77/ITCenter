@@ -296,6 +296,7 @@
 		function newAsset(){
 			$('#fm').form('clear');
 			$('#aOperation').val('add');
+			$('#aID').textbox('enable');
 			$('#dlg').dialog('open').dialog('setTitle','添加资产');
 		}
 	</script>
@@ -317,6 +318,7 @@
 					    aSource:result.data['source'],
 					    aRemark:result.data['remark']
 					});
+					$('#aID').textbox('disable');
 					$('#dlg').dialog('open').dialog('setTitle','修改资产');
 				} else {
 					$.messager.show({
