@@ -158,4 +158,49 @@ class UserController extends Controller {
 		$result = json_decode($result);
 		$this->ajaxReturn($result);
 	}
+	
+	public function tableExport(){
+/* 		$condition = array();
+		if($_POST['sName']){
+			$condition['name'] = $_POST['sName'];
+		}
+		if($_POST['sDepartment']){
+			$condition['department'] = $_POST['sDepartment'];
+		}
+		if($_POST['sJob']){
+			$condition['job'] = $_POST['sJob'];
+		}
+		if($_POST['sOfficePhone']){
+			$condition['office_phone'] = $_POST['sOfficePhone'];
+		}
+		if($_POST['sMobilePhone']){
+			$condition['mobile_phone'] = $_POST['sMobilePhone'];
+		}
+		
+		$userList = $user->where($condition)->order('create_date desc')->page($page.','.$rows)->select(); */
+		
+		include 'PHPExcel.php';
+		include 'PHPExcel/Writer/Excel2007.php';
+		//或者include 'PHPExcel/Writer/Excel5.php'; 用于输出.xls的
+		创建一个excel
+		$objPHPExcel = new PHPExcel();
+		//输出Excel表格到浏览器下载
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment;filename="abc.xls"');
+		header('Cache-Control: max-age=0');
+		// If you're serving to IE 9, then the following may be needed
+		header('Cache-Control: max-age=1');
+		// If you're serving to IE over SSL, then the following may be needed
+		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+		header('Last-Modified: ' . gmdate('D, d M Y H:i:s') . ' GMT'); // always modified
+		header('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+		header('Pragma: public'); // HTTP/1.0
+		$objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
+		$objWriter->save('php://output');
+		
+		
+		$result = json_encode(array('errorMsg' => $_POST['sName']));
+		$result = json_decode($result);
+		$this->ajaxReturn($result);
+	}
 }

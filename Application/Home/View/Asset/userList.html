@@ -37,7 +37,7 @@
 						<div>
 							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doSearch()">搜索</a>
 							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="clearSearch()">清空</a>
-							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doSearch()">导出</a>
+							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doExport()">导出</a>
 						</div>
 					</td>
 				</tr>
@@ -143,6 +143,37 @@
 	function clearSearch(){
 		$('#ff').form('clear');
 		doSearch();
+	}
+	</script>
+	<script>
+	function doExport(){
+		var conditions = {
+			sName: $('#sName').val(),
+			sDepartment: $('#sDepartment').val(),
+			sJob: $('#sJob').val(),
+			sOfficePhone: $('#sOfficePhone').val(),
+			sMobilePhone: $('#sMobilePhone').val()
+		};
+		
+		$.post("/ITCenter/index.php/Home/User/tableExport",conditions,function(result){
+			if(result.success) {
+				/*$('#aOperation').val('edit');
+				$('#fm').form('load',{
+					aID:result.data['id'],
+					aName:result.data['name'],
+					aDepartment:result.data['department'],
+					aJob:result.data['job'],
+					aOfficePhone:result.data['office_phone'],
+					aMobilePhone:result.data['mobile_phone']
+				});
+				$('#dlg').dialog('open').dialog('setTitle','修改人员');*/
+			} else {
+				$.messager.show({
+					title: '错误提示',
+					msg: result.errorMsg
+				});
+			}
+		});
 	}
 	</script>
 	<script>
