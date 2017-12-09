@@ -122,6 +122,16 @@
 		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()">保存</a>
 		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
 	</div>
+	
+	<div id="dlg1" class="easyui-dialog" style="width:300px;height:150px;padding:30px 20px"
+		closed="true" buttons="#dlg1-buttons">
+		<a>表格已经生成，请点击下载！</a>
+	</div>
+	<div id="dlg1-buttons">
+		<a href="http://localhost/itcenter/user.xlsx" class="easyui-linkbutton" iconCls="icon-ok">下载</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
+	</div>
+	
 	<div id='loadingDiv' style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: white; text-align: center;">    
 		<h1 style="top: 48%; position: relative;">    
 			<font color="#15428B">努力加载中···</font>    
@@ -157,16 +167,7 @@
 		
 		$.post("/ITCenter/index.php/Home/User/tableExport",conditions,function(result){
 			if(result.success) {
-				/*$('#aOperation').val('edit');
-				$('#fm').form('load',{
-					aID:result.data['id'],
-					aName:result.data['name'],
-					aDepartment:result.data['department'],
-					aJob:result.data['job'],
-					aOfficePhone:result.data['office_phone'],
-					aMobilePhone:result.data['mobile_phone']
-				});
-				$('#dlg').dialog('open').dialog('setTitle','修改人员');*/
+				$('#dlg1').dialog('open').dialog('setTitle','下载表格');
 			} else {
 				$.messager.show({
 					title: '错误提示',

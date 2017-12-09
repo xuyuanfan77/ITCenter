@@ -160,7 +160,15 @@ class UserController extends Controller {
 	}
 	
 	public function tableExport(){
-/* 		$condition = array();
+ 		$option = M('option');
+		$optionList = $option->select();
+		$optionArray = array();
+		foreach($optionList as $index=>$data){
+			$optionArray[$data['id']] = $data;
+		}
+
+		$user = M('User');
+		$condition = array();
 		if($_POST['sName']){
 			$condition['name'] = $_POST['sName'];
 		}
@@ -177,18 +185,42 @@ class UserController extends Controller {
 			$condition['mobile_phone'] = $_POST['sMobilePhone'];
 		}
 		
-		$userList = $user->where($condition)->order('create_date desc')->page($page.','.$rows)->select(); */
-		
+		$userList = $user->where($condition)->order('create_date desc')->select();
+
 		import("Org.Util.PHPExcel");
-        import("Org.Util.PHPExcel.Writer.Excel2007");
 		
+		// Create new PHPExcel object
 		$objPHPExcel = new \PHPExcel();
-		$objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
-		$objWriter->save('output');
+
+		// Add some data
+		$objPHPExcel->setActiveSheetIndex(0)
+					->setCellValue('A1', '姓名')
+					->setCellValue('B1', '部门')
+					->setCellValue('C1', '职务')
+					->setCellValue('D1', '办公电话')
+					->setCellValue('E1', '移动电话');
 		
+		$index = 2;
+		foreach($userList as $key=>$data){
+			$objPHPExcel->setActiveSheetIndex(0)
+					->setCellValue('A'.$index, $data['name'])
+					->setCellValue('B'.$index, $optionArray[$data['department']]['option_name'])
+					->setCellValue('C'.$index, $optionArray[$data['job']]['option_name'])
+					->setCellValue('D'.$index, $data['office_phone'])
+					->setCellValue('E'.$index, $data['mobile_phone']);
+			$index++;
+		}
+
+		// Rename worksheet
+		$objPHPExcel->getActiveSheet()->setTitle('人员列表');
+
+		import("Org.Util.PHPExcel.IOFactory");
+		$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+		$objWriter->save('user.xlsx');
 		
-		$result = json_encode(array('errorMsg' => $_POST['sName']));
+		$result = json_encode(array('success'=>true));
 		$result = json_decode($result);
 		$this->ajaxReturn($result);
+		
 	}
 }
