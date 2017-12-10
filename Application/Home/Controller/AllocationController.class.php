@@ -222,4 +222,119 @@ class AllocationController extends Controller {
 		$result = json_decode($result);
 		$this->ajaxReturn($result);
     }
+	
+	public function tableExport(){
+		$option = D('option');
+		$optionList = $option->select();
+		$optionArray = array();
+		foreach($optionList as $index=>$data){
+			$optionArray[$data['id']] = $data;
+		}
+
+		$allocation = D('AllocationView');
+
+		$condition = array();
+		if($_POST['sID']){
+			$condition['asset_id'] = $_POST['sID'];
+		}
+		if($_POST['sType']){
+			$condition['type'] = $_POST['sType'];
+		}
+		if($_POST['sBrand']){
+			$condition['name'] = $_POST['sBrand'];
+		}
+		if($_POST['sModel']){
+			$condition['name'] = $_POST['sModel'];
+		}
+		if($_POST['sNumber']){
+			$condition['name'] = $_POST['sNumber'];
+		}
+		if($_POST['sNetWork']){
+			$condition['name'] = $_POST['sNetWork'];
+		}
+		if($_POST['sSource']){
+			$condition['name'] = $_POST['sSource'];
+			
+		}
+		if($_POST['sPurchaseDateS']){
+			if($_POST['sPurchaseDateE']){
+				$condition['purchase_date'] = array(array('gt',$_POST['sPurchaseDateS']),array('lt',$_POST['sPurchaseDateE']));
+			}else{
+				$condition['purchase_date'] = array(array('gt',$_POST['sPurchaseDateS']),array('lt',date("Y-m-d H:i:s",time())));
+			}
+		}
+		if($_POST['sUseDateS']){
+			if($_POST['sPurchaseDateE']){
+				$condition['use_date'] = array(array('gt',$_POST['sUseDateS']),array('lt',$_POST['sUseDateE']));
+			}else{
+				$condition['use_date'] = array(array('gt',$_POST['sUseDateS']),array('lt',date("Y-m-d H:i:s",time())));
+			}
+		}
+		if($_POST['sName']){
+			$condition['name'] = $_POST['sName'];
+		}
+		if($_POST['sDepartment']){
+			$condition['department'] = $_POST['sDepartment'];
+		}
+		if($_POST['sState']){
+			$condition['state'] = $_POST['sState'];
+		}
+		
+		$allocationList = $allocation->where($condition)->order('allocation_create_date desc')->select();
+		
+		import("Org.Util.PHPExcel");
+		
+		// Create new PHPExcel object
+		$objPHPExcel = new \PHPExcel();
+
+		// Add some data
+		$objPHPExcel->setActiveSheetIndex(0)
+					->setCellValue('A1', '资产编号')
+					->setCellValue('B1', '类型')
+					->setCellValue('C1', '品牌')
+					->setCellValue('D1', '型号')
+					->setCellValue('E1', '序列号')
+					->setCellValue('F1', '接入网络')
+					->setCellValue('G1', '设备来源')
+					->setCellValue('H1', '资产状态')
+					->setCellValue('I1', '购置日期')
+					->setCellValue('J1', '使用人')
+					->setCellValue('K1', '部门')
+					->setCellValue('L1', '职务')
+					->setCellValue('M1', '办公电话')
+					->setCellValue('N1', '移动电话')
+					->setCellValue('O1', '分配日期');
+		
+		$index = 2;
+		foreach($allocationList as $key=>$data){
+			$objPHPExcel->setActiveSheetIndex(0)
+					->setCellValue('A'.$index, $data['id'])
+					->setCellValue('B'.$index, $optionArray[$data['type']]['option_name'])
+					->setCellValue('C'.$index, $optionArray[$data['brand']]['option_name'])
+					->setCellValue('D'.$index, $optionArray[$data['model']]['option_name'])
+					->setCellValue('E'.$index, $data['number'])
+					->setCellValue('F'.$index, $optionArray[$data['network']]['option_name'])
+					->setCellValue('G'.$index, $optionArray[$data['source']]['option_name'])
+					->setCellValue('H'.$index, $optionArray[$data['state']]['option_name'])
+					->setCellValue('I'.$index, $data['purchase_date'])
+					->setCellValue('J'.$index, $data['name'])
+					->setCellValue('K'.$index, $optionArray[$data['department']]['option_name'])
+					->setCellValue('L'.$index, $optionArray[$data['job']]['option_name'])
+					->setCellValue('M'.$index, $data['office_phone'])
+					->setCellValue('N'.$index, $data['mobile_phone'])
+					->setCellValue('O'.$index, $data['use_date']);
+			$index++;
+		}
+
+		// Rename worksheet
+		$objPHPExcel->getActiveSheet()->setTitle('配置列表');
+
+		import("Org.Util.PHPExcel.IOFactory");
+		$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+		$objWriter->save('allocation.xlsx');
+		
+		$result = json_encode(array('success'=>true));
+		$result = json_decode($result);
+		$this->ajaxReturn($result);
+	}
 }

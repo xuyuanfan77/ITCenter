@@ -117,7 +117,7 @@
 						<div>
 							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doSearch()">搜索</a>
 							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="clearSearch()">清空</a>
-							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doSearch()">导出</a>
+							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doExport()">导出</a>
 						</div>
 					</td>
 				</tr>
@@ -247,6 +247,16 @@
 		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveAsset()">保存</a>
 		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
 	</div>
+	
+	<div id="dlg1" class="easyui-dialog" style="width:300px;height:150px;padding:30px 20px"
+		closed="true" buttons="#dlg1-buttons">
+		<a>表格已经生成，请点击下载！</a>
+	</div>
+	<div id="dlg1-buttons">
+		<a href="http://localhost/itcenter/asset.xlsx" class="easyui-linkbutton" iconCls="icon-ok">下载</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
+	</div>
+	
 	<div id="cc" class="easyui-calendar"></div>
 	<div id='loadingDiv' style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: white; text-align: center;">    
 		<h1 style="top: 48%; position: relative;">    
@@ -287,6 +297,33 @@
 	function clearSearch(){
 		$('#ff').form('clear');
 		doSearch();
+	}
+	</script>
+	<script>
+	function doExport(){
+		var conditions = {
+			sID: $('#sID').val(),
+			sType: $('#sType').val(),
+			sBrand: $('#sBrand').val(),
+			sModel: $('#sModel').val(),
+			sNumber: $('#sNumber').val(),
+			sNetWork: $('#sNetWork').val(),
+			sSource: $('#sSource').val(),
+			sState: $('#sState').val(),
+			sPurchaseDateS: $('#sPurchaseDateS').val(),
+			sPurchaseDateE: $('#sPurchaseDateE').val()
+		};
+		
+		$.post("/ITCenter/index.php/Home/Asset/tableExport",conditions,function(result){
+			if(result.success) {
+				$('#dlg1').dialog('open').dialog('setTitle','下载表格');
+			} else {
+				$.messager.show({
+					title: '错误提示',
+					msg: result.errorMsg
+				});
+			}
+		});
 	}
 	</script>
 	<script>

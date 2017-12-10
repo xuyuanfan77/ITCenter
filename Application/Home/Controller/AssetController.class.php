@@ -189,4 +189,94 @@ class AssetController extends Controller {
 		$result = json_decode($result);
 		$this->ajaxReturn($result);
 	}
+	
+	public function tableExport(){
+		$option = M('option');
+		$optionList = $option->select();
+		$optionArray = array();
+		foreach($optionList as $index=>$data){
+			$optionArray[$data['id']] = $data;
+		}
+
+		$asset = M('Asset');
+
+		$condition = array();
+		if($_POST['sID']){
+			$condition['id'] = $_POST['sID'];
+		}
+		if($_POST['sType']){
+			$condition['type'] = $_POST['sType'];
+		}
+		if($_POST['sBrand']){
+			$condition['brand'] = $_POST['sBrand'];
+		}
+		if($_POST['sModel']){
+			$condition['model'] = $_POST['sModel'];
+		}
+		if($_POST['sNumber']){
+			$condition['number'] = $_POST['sNumber'];
+		}
+		if($_POST['sNetWork']){
+			$condition['network'] = $_POST['sNetWork'];
+		}
+		if($_POST['sSource']){
+			$condition['source'] = $_POST['sSource'];
+		}
+		if($_POST['sState']){
+			$condition['state'] = $_POST['sState'];
+		}
+		if($_POST['sPurchaseDateS']){
+			if($_POST['sPurchaseDateE']){
+				$condition['purchase_date'] = array(array('gt',$_POST['sPurchaseDateS']),array('lt',$_POST['sPurchaseDateE']));
+			}else{
+				$condition['purchase_date'] = array(array('gt',$_POST['sPurchaseDateS']),array('lt',date("Y-m-d H:i:s",time())));
+			}
+		}
+		
+		$assetList = $asset->where($condition)->order('create_date desc')->select();
+		
+		import("Org.Util.PHPExcel");
+		
+		// Create new PHPExcel object
+		$objPHPExcel = new \PHPExcel();
+
+		// Add some data
+		$objPHPExcel->setActiveSheetIndex(0)
+					->setCellValue('A1', '资产编号')
+					->setCellValue('B1', '类型')
+					->setCellValue('C1', '品牌')
+					->setCellValue('D1', '型号')
+					->setCellValue('E1', '序列号')
+					->setCellValue('F1', '接入网络')
+					->setCellValue('G1', '设备来源')
+					->setCellValue('H1', '资产状态')
+					->setCellValue('I1', '购置日期');
+		
+		$index = 2;
+		foreach($assetList as $key=>$data){
+			$objPHPExcel->setActiveSheetIndex(0)
+					->setCellValue('A'.$index, $data['id'])
+					->setCellValue('B'.$index, $optionArray[$data['type']]['option_name'])
+					->setCellValue('C'.$index, $optionArray[$data['brand']]['option_name'])
+					->setCellValue('D'.$index, $optionArray[$data['model']]['option_name'])
+					->setCellValue('E'.$index, $data['number'])
+					->setCellValue('F'.$index, $optionArray[$data['network']]['option_name'])
+					->setCellValue('G'.$index, $optionArray[$data['source']]['option_name'])
+					->setCellValue('H'.$index, $optionArray[$data['state']]['option_name'])
+					->setCellValue('I'.$index, $data['purchase_date']);
+			$index++;
+		}
+
+		// Rename worksheet
+		$objPHPExcel->getActiveSheet()->setTitle('资产列表');
+
+		import("Org.Util.PHPExcel.IOFactory");
+		$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+		$objWriter->save('asset.xlsx');
+		
+		$result = json_encode(array('success'=>true));
+		$result = json_decode($result);
+		$this->ajaxReturn($result);
+	}
+	
 }
