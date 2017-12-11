@@ -1,7 +1,11 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class LogController extends Controller {
+class LogController extends CommonController {
+	public function index(){
+        $this->redirect('Asset/logList');
+    }
+	
 	public function getUserData(){
 		$log = M('Log');
 		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;  

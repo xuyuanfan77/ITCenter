@@ -1,7 +1,11 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class UserController extends Controller {
+class UserController extends CommonController {
+	public function index(){
+        $this->redirect('Asset/userList');
+    }
+	
 	public function getUserData(){
 		$option = M('option');
 		$optionList = $option->select();

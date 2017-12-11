@@ -15,6 +15,7 @@
 <body class="easyui-layout">
 	<div id="north" data-options="region:'north'" style="height:100px;">
 		<h1 id="title">固定资产管理系统</h1>
+		
 	</div>
 	<div id="south" data-options="region:'south'" style="height:50px;"></div>
 	<div data-options="region:'west'" title="目录" style="width:240px;">
@@ -25,9 +26,9 @@
 					<li>
 						<span>资产管理</span>
 						<ul>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/allocation');?>">配置列表</a></li>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/assetList');?>">资产列表</a></li>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/userList');?>">人员列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('Allocation/index');?>">配置列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('Asset/index');?>">资产列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('User/index');?>">人员列表</a></li>
 						</ul>
 					</li>
 					<li>
@@ -39,7 +40,16 @@
 						</ul>
 					</li>
 					<li>
-						<span><a style="text-decoration:none" href="<?php echo U('Asset/logList');?>">资产日志</a></span>
+						<span><a style="text-decoration:none" href="<?php echo U('Log/index');?>">资产日志</a></span>
+					</li>
+				</ul>
+				
+			</li>
+			<li>
+				<span>系统管理</span>
+				<ul>
+					<li>
+						<span><a style="text-decoration:none">退出</a></span>
 					</li>
 				</ul>
 			</li>
@@ -53,14 +63,14 @@
 				<tr>
 					<td>资产编号：</td>
 					<td>
-						<input id="sID" class="easyui-combobox" type="text" name="sID" style="width:200px;"
+						<input id="sID" class="easyui-combobox" type="text" name="sID"
 							valueField="id" 
 							textField="id" 
 							url="<?php echo U('Allocation/getIdData');?>">
 					</td>
 					<td>类型：</td>
 					<td>
-						<input id="sType" class="easyui-combobox" name="sType" style="width:200px"
+						<input id="sType" class="easyui-combobox" name="sType"
 							panelHeight="auto"
 							valueField="id" 
 							textField="option_name" 
@@ -68,25 +78,25 @@
 					</td>
 					<td>品牌：</td>
 					<td>
-						<input id="sBrand" class="easyui-combobox" name="sBrand" style="width:200px"
+						<input id="sBrand" class="easyui-combobox" name="sBrand"
 						valueField="id" 
 						textField="option_name" 
 						url="<?php echo U('Asset/getOptionData',array('type'=>2));?>">
 					</td>
 					<td>型号：</td>
 					<td>
-						<input id="sModel" class="easyui-textbox" type="text" name="sModel" style="width:200px"></input>
+						<input id="sModel" class="easyui-textbox" type="text" name="sModel"></input>
 					</td>
 					<td>序列号：</td>
 					<td>
-						<input id="sNumber" class="easyui-textbox" type="text" name="sNumber" style="width:200px"></input>
+						<input id="sNumber" class="easyui-textbox" type="text" name="sNumber"></input>
 					</td>
 					
 				</tr>
 				<tr>
 					<td>接入网络：</td>
 					<td>
-						<input id="sNetWork" class="easyui-combobox" name="sNetWork" style="width:200px"
+						<input id="sNetWork" class="easyui-combobox" name="sNetWork"
 						panelHeight="auto"
 						valueField="id" 
 						textField="option_name" 
@@ -94,39 +104,39 @@
 					</td>
 					<td>使用人：</td>
 					<td>
-						<input id="sName" class="easyui-combobox" type="text" name="sName" style="width:200px;"
+						<input id="sName" class="easyui-combobox" type="text" name="sName"
 						valueField="id" 
 						textField="name" 
 						url="<?php echo U('Allocation/getNameData');?>">
 					</td>
 					<td>使用部门：</td>
 					<td>
-						<input id="sDepartment" class="easyui-combobox" name="sDepartment" style="width:200px"
+						<input id="sDepartment" class="easyui-combobox" name="sDepartment"
 						valueField="id" 
 						textField="option_name" 
 						url="<?php echo U('Asset/getOptionData',array('type'=>6));?>">
 					</td>
 					<td>购置日期(S)：</td>
 					<td>
-						<input id="sPurchaseDateS" class="easyui-datetimebox" style="width:200px" editable="false" data-options="sharedCalendar:'#cc'">
+						<input id="sPurchaseDateS" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#cc'">
 					</td>
 					<td>购置日期(E)：</td>
 					<td>
-						<input id="sPurchaseDateE" class="easyui-datetimebox" style="width:200px" editable="false" data-options="sharedCalendar:'#cc'">
+						<input id="sPurchaseDateE" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#cc'">
 					</td>
 				</tr>
 				<tr>
 					<td>分配日期(S)：</td>
 					<td>
-						<input id="sUseDateS" class="easyui-datetimebox" style="width:200px" editable="false" data-options="sharedCalendar:'#cc'">
+						<input id="sUseDateS" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#cc'">
 					</td>
 					<td>分配日期(E)：</td>
 					<td>
-						<input id="sUseDateE" class="easyui-datetimebox" style="width:200px" editable="false" data-options="sharedCalendar:'#cc'">
+						<input id="sUseDateE" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#cc'">
 					</td>
 					<td>资产状态：</td>
 					<td>
-						<input id="sState" class="easyui-combobox" name="aState" style="width:200px"
+						<input id="sState" class="easyui-combobox" name="aState"
 						panelHeight="auto"
 						valueField="id" 
 						textField="option_name" 
@@ -134,7 +144,7 @@
 					</td>
 					<td>设备来源：</td>
 					<td>
-						<input id="sSource" class="easyui-combobox" name="sSource" style="width:200px"
+						<input id="sSource" class="easyui-combobox" name="sSource"
 						panelHeight="auto"
 						valueField="id" 
 						textField="option_name" 
@@ -142,9 +152,9 @@
 					</td>
 					<td></td>
 					<td>
-						<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doSearch()">搜索</a>
-						<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="clearSearch()">清空</a>
-						<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doExport()">导出</a>
+						<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doSearch()">搜索</a>
+						<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="clearSearch()">清空</a>
+						<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doExport()">导出</a>
 					</td>
 				</tr>
 			</table>

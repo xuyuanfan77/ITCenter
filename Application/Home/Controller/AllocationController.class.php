@@ -1,7 +1,11 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class AllocationController extends Controller {
+class AllocationController extends CommonController {
+	public function index(){
+        $this->redirect('Asset/allocation');
+    }
+	
 	public function getAllocatinData(){
 		$option = D('option');
 		$optionList = $option->select();
@@ -311,7 +315,7 @@ class AllocationController extends Controller {
 					->setCellValue('A'.$index, $data['id'])
 					->setCellValue('B'.$index, $optionArray[$data['type']]['option_name'])
 					->setCellValue('C'.$index, $optionArray[$data['brand']]['option_name'])
-					->setCellValue('D'.$index, $optionArray[$data['model']]['option_name'])
+					->setCellValue('D'.$index, $data['model'])
 					->setCellValue('E'.$index, $data['number'])
 					->setCellValue('F'.$index, $optionArray[$data['network']]['option_name'])
 					->setCellValue('G'.$index, $optionArray[$data['source']]['option_name'])

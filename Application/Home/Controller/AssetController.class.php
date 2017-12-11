@@ -1,7 +1,11 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class AssetController extends Controller {
+class AssetController extends CommonController {
+	public function index(){
+        $this->redirect('Asset/assetList');
+    }
+	
 	public function getAssetData(){
 
 		$option = M('option');
@@ -258,7 +262,7 @@ class AssetController extends Controller {
 					->setCellValue('A'.$index, $data['id'])
 					->setCellValue('B'.$index, $optionArray[$data['type']]['option_name'])
 					->setCellValue('C'.$index, $optionArray[$data['brand']]['option_name'])
-					->setCellValue('D'.$index, $optionArray[$data['model']]['option_name'])
+					->setCellValue('D'.$index, $data['model'])
 					->setCellValue('E'.$index, $data['number'])
 					->setCellValue('F'.$index, $optionArray[$data['network']]['option_name'])
 					->setCellValue('G'.$index, $optionArray[$data['source']]['option_name'])

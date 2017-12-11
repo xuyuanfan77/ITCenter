@@ -25,9 +25,9 @@
 					<li>
 						<span>资产管理</span>
 						<ul>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/allocation');?>">配置列表</a></li>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/assetList');?>">资产列表</a></li>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/userList');?>">人员列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('Allocation/index');?>">配置列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('Asset/index');?>">资产列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('User/index');?>">人员列表</a></li>
 						</ul>
 					</li>
 					<li>
@@ -39,7 +39,7 @@
 						</ul>
 					</li>
 					<li>
-						<span><a style="text-decoration:none" href="<?php echo U('Asset/logList');?>">资产日志</a></span>
+						<span><a style="text-decoration:none" href="<?php echo U('Log/index');?>">资产日志</a></span>
 					</li>
 				</ul>
 			</li>
@@ -53,38 +53,38 @@
 				<tr>
 					<td>姓名：</td>
 					<td>
-						<input id="sName" class="easyui-combobox" type="text" name="sName" style="width:200px;"
+						<input id="sName" class="easyui-combobox" type="text" name="sName"
 						valueField="id" 
 						textField="name" 
 						url="<?php echo U('User/getNameData');?>">
 					</td>
 					<td>部门：</td>
 					<td>
-						<input id="sDepartment" class="easyui-combobox" name="sDepartment" style="width:200px"
+						<input id="sDepartment" class="easyui-combobox" name="sDepartment"
 						valueField="id" 
 						textField="option_name" 
 						url="<?php echo U('User/getOptionData',array('type'=>6));?>">
 					</td>
 					<td>职务：</td>
 					<td>
-						<input id="sJob" class="easyui-combobox" name="sJob" style="width:200px"
+						<input id="sJob" class="easyui-combobox" name="sJob"
 						valueField="id" 
 						textField="option_name" 
 						url="<?php echo U('User/getOptionData',array('type'=>7));?>">
 					</td>
 					<td>办公电话：</td>
 					<td>
-						<input id="sOfficePhone" class="easyui-textbox" type="text" name="sOfficePhone" style="width:200px"></input>
+						<input id="sOfficePhone" class="easyui-textbox" type="text" name="sOfficePhone"></input>
 					</td>
 					<td>移动电话：</td>
 					<td>
-						<input id="sMobilePhone" class="easyui-textbox" type="text" name="sMobilePhone" style="width:200px"></input>
+						<input id="sMobilePhone" class="easyui-textbox" type="text" name="sMobilePhone"></input>
 					</td>
 					<td>
 						<div>
-							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doSearch()">搜索</a>
-							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="clearSearch()">清空</a>
-							<a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="doExport()">导出</a>
+							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doSearch()">搜索</a>
+							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="clearSearch()">清空</a>
+							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doExport()">导出</a>
 						</div>
 					</td>
 				</tr>

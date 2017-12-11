@@ -25,9 +25,9 @@
 					<li>
 						<span>资产管理</span>
 						<ul>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/allocation');?>">配置列表</a></li>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/assetList');?>">资产列表</a></li>
-							<li><a style="text-decoration:none" href="<?php echo U('Asset/userList');?>">人员列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('Allocation/index');?>">配置列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('Asset/index');?>">资产列表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('User/index');?>">人员列表</a></li>
 						</ul>
 					</li>
 					<li>
@@ -39,7 +39,7 @@
 						</ul>
 					</li>
 					<li>
-						<span><a style="text-decoration:none" href="<?php echo U('Asset/logList');?>">资产日志</a></span>
+						<span><a style="text-decoration:none" href="<?php echo U('Log/index');?>">资产日志</a></span>
 					</li>
 				</ul>
 			</li>

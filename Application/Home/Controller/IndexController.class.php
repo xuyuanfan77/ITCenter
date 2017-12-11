@@ -13,9 +13,11 @@ class IndexController extends Controller {
 		if ($managerData&&$managerData['password']==$_POST['password']){
 			$sessionID = session_id();
 			session('id', $sessionID);
-			session('name', $userData['name']);	
+			session('managerID', $managerData['id']);	
+			session('managerName', $managerData['name']);
 
-			$this->redirect('Asset/assetList');
+			//$this->redirect('Asset/allocation');
+			$this->redirect('Allocation/index');
         }else{
             $this->error('账号或者密码输入错误！');
         }
