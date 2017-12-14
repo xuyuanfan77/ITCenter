@@ -15,6 +15,7 @@
 <body class="easyui-layout">
 	<div id="north" data-options="region:'north'" style="height:100px;">
 		<h1 id="title">固定资产管理系统</h1>
+		
 	</div>
 	<div id="south" data-options="region:'south'" style="height:50px;"></div>
 	<div data-options="region:'west'" title="目录" style="width:240px;">
@@ -40,6 +41,15 @@
 					</li>
 					<li>
 						<span><a style="text-decoration:none" href="<?php echo U('Log/index');?>">资产日志</a></span>
+					</li>
+				</ul>
+				
+			</li>
+			<li>
+				<span>系统管理</span>
+				<ul>
+					<li>
+						<span><a style="text-decoration:none">退出</a></span>
 					</li>
 				</ul>
 			</li>
@@ -84,6 +94,7 @@
 						<div>
 							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doSearch()">搜索</a>
 							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="clearSearch()">清空</a>
+							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doImport()">导入</a>
 							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doExport()">导出</a>
 						</div>
 					</td>
@@ -179,6 +190,17 @@
 		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
 	</div>
 	
+	<div id="dlg2" class="easyui-dialog" style="width:315px;height:148px;padding:25px 20px"
+		closed="true" buttons="#dlg2-buttons">
+		<form id="fm2" method="post"  enctype="multipart/form-data">
+			<input id="userExcel" class="easyui-filebox" name="userExcel" data-options="buttonText:'浏览',prompt:'请选择xlsx文件'"/>
+		</form>
+	</div>
+	<div id="dlg2-buttons">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="tableImport()">导入</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg2').dialog('close')">取消</a>
+	</div>
+	
 	<div id='loadingDiv' style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: white; text-align: center;">    
 		<h1 style="top: 48%; position: relative;">    
 			<font color="#15428B">努力加载中···</font>    
@@ -200,6 +222,30 @@
 	function clearSearch(){
 		$('#ff').form('clear');
 		doSearch();
+	}
+	</script>
+	<script>
+	function doImport(){
+		$('#dlg2').dialog('open').dialog('setTitle','导入表格');
+	}
+	</script>
+	<script>
+	function tableImport(){
+		$('#fm2').form('submit', {
+			url:"/ITCenter/index.php/Home/User/tableImport",
+			success:function(result){
+				if(result.result == 'true'){
+					$('#dg').datagrid('reload');
+					$('#dlg2').dialog('close');
+				}else{
+					$.messager.show({
+						title: '错误提示',
+						msg: '文件导入失败！'
+					});
+					$('#dlg2').dialog('close');
+				}
+			}
+		});
 	}
 	</script>
 	<script>
@@ -261,7 +307,6 @@
 				if(result.success) {
 					$('#dg').datagrid('reload');
 					$('#dlg').dialog('close');
-					
 				} else {
 					$.messager.show({
 						title: '错误提示',
@@ -269,7 +314,6 @@
 					});
 				}
 			});
-
 		}
 	</script>
 	<script>

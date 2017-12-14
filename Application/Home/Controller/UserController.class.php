@@ -227,4 +227,51 @@ class UserController extends CommonController {
 		$this->ajaxReturn($result);
 		
 	}
+	
+	public function tableImport(){			
+ 		if (!empty($_FILES['userExcel']['name'])){
+			$tmp_file = $_FILES['userExcel']['tmp_name'];
+			$file_types = explode ( ".", $_FILES['userExcel']['name'] );
+			$file_type = $file_types[count ($file_types)-1];
+			/*判别是不是.xlsx文件，判别是不是excel文件*/
+			if (strtolower($file_type )!= "xlsx"){
+				$this->ajaxReturn('error1');
+			}
+			
+			$savePath = './Public/Upfile/';
+			$str = date('Ymdhis');
+			$file_name = $str.".".$file_type;
+			if (!copy( $tmp_file, $savePath . $file_name )){
+				$this->ajaxReturn('error2');
+			}
+			import("Org.Util.PHPExcel");
+			import("Org.Util.PHPExcel.IOFactory");
+			$objReader = \PHPExcel_IOFactory::createReader('Excel2007');
+			$objReader->setReadDataOnly(true);
+			$objPHPExcel = $objReader->load($savePath.$file_name);
+			$objWorksheet = $objPHPExcel->getActiveSheet();
+			$highestRow = $objWorksheet->getHighestRow();
+			$highestColumn = $objWorksheet->getHighestColumn();
+			import("Org.Util.PHPExcel.Cell");
+			$highestColumnIndex = \PHPExcel_Cell::columnIndexFromString($highestColumn);
+			$excelData = array();
+			for ($row = 2; $row <= $highestRow; $row++) {
+				for ($col = 0; $col < $highestColumnIndex; $col++) { 
+					$excelData[$row][$col] =(string)$objWorksheet->getCellByColumnAndRow($col, $row)->getValue();
+				} 
+			}			
+			foreach($excelData as $k => $v ){
+				$data['name'] = $v[0];
+				$data['department'] = $v[1];
+				$data['job'] = $v[2];
+				$data['office_phone'] = $v[3];
+				$data['mobile_phone'] = $v[4];
+				$data['create_date'] = date("Y-m-d H:i:s",time()); 
+				$result = M("user")->add($data);
+			}
+			$this->ajaxReturn('1');
+		}else{
+			$this->ajaxReturn('error3');
+		}
+	}
 }

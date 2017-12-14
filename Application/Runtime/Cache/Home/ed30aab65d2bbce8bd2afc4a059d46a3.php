@@ -15,6 +15,7 @@
 <body class="easyui-layout">
 	<div id="north" data-options="region:'north'" style="height:100px;">
 		<h1 id="title">固定资产管理系统</h1>
+		
 	</div>
 	<div id="south" data-options="region:'south'" style="height:50px;"></div>
 	<div data-options="region:'west'" title="目录" style="width:240px;">
@@ -40,6 +41,15 @@
 					</li>
 					<li>
 						<span><a style="text-decoration:none" href="<?php echo U('Log/index');?>">资产日志</a></span>
+					</li>
+				</ul>
+				
+			</li>
+			<li>
+				<span>系统管理</span>
+				<ul>
+					<li>
+						<span><a style="text-decoration:none">退出</a></span>
 					</li>
 				</ul>
 			</li>

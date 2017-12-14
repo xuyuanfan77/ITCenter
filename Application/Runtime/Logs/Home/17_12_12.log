@@ -1,0 +1,2970 @@
+[ 2017-12-12T14:41:49+08:00 ] ::1 /itcenter/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.016001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.008000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.008000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T14:41:52+08:00 ] ::1 /itcenter/index.php/Home/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `manager` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `manager` WHERE `name` = 'xuyuanfan' LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2017-12-12T14:41:52+08:00 ] ::1 /itcenter/index.php/Home/Allocation/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-12T14:41:52+08:00 ] ::1 /itcenter/index.php/Home/Asset/allocation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T14:41:52+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getIdData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `asset` [ RunTime:0.0440s ]
+SQL: SELECT `id` FROM `asset`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0300s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '1'  [ RunTime:0.0020s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '2'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '3'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.007000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0390s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '4'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '5'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '1'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '2'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '3'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '5'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '4'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:41:53+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getAllocatinData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sID D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sType D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sBrand D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sModel D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sNumber D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 34 行.
+NOTIC: [8] Undefined index: sNetWork D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 37 行.
+NOTIC: [8] Undefined index: sSource D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 40 行.
+NOTIC: [8] Undefined index: sPurchaseDateS D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 44 行.
+NOTIC: [8] Undefined index: sUseDateS D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 51 行.
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 58 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 61 行.
+NOTIC: [8] Undefined index: sState D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `asset` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `allocation` [ RunTime:0.0290s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT asset.type AS type,asset.brand AS brand,asset.model AS model,asset.number AS number,asset.network AS network,asset.source AS source,asset.purchase_date AS purchase_date,asset.remark AS asset_remark,asset.state AS state,asset.create_date AS asset_create_date,allocation.id AS id,allocation.asset_id AS asset_id,allocation.user_id AS user_id,allocation.use_date AS use_date,allocation.remark AS allocation_remark,allocation.create_date AS allocation_create_date,user.name AS name,user.department AS department,user.job AS job,user.office_phone AS office_phone,user.mobile_phone AS mobile_phone,user.create_date AS user_create_date FROM asset asset RIGHT JOIN allocation allocation ON allocation.asset_id=asset.id LEFT JOIN user user ON allocation.user_id=user.id ORDER BY allocation.create_date desc LIMIT 0,10   [ RunTime:0.0030s ]
+
+[ 2017-12-12T14:44:41+08:00 ] ::1 /itcenter/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T14:44:41+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T14:44:42+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:44:42+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:44:42+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:44:42+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:44:42+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:44:42+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:49:12+08:00 ] ::1 /ITCenter/index.php/Home/User/userSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0000s ]
+SQL: INSERT INTO `log` (`type`,`text`,`create_date`) VALUES ('3','添加【人员（冯浦）】','2017-12-12 14:49:12') [ RunTime:0.0000s ]
+SQL: INSERT INTO `user` (`name`,`department`,`job`,`office_phone`,`mobile_phone`,`create_date`) VALUES ('冯浦','45','94','6681321','13828282628','2017-12-12 14:49:12') [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:49:12+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:51:00+08:00 ] ::1 /ITCenter/index.php/Home/User/userSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0000s ]
+SQL: INSERT INTO `log` (`type`,`text`,`create_date`) VALUES ('3','添加【人员（黄廉团）】','2017-12-12 14:51:00') [ RunTime:0.0000s ]
+SQL: INSERT INTO `user` (`name`,`department`,`job`,`office_phone`,`mobile_phone`,`create_date`) VALUES ('黄廉团','46','75','6684701','18820698123','2017-12-12 14:51:00') [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:51:00+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:51:25+08:00 ] ::1 /ITCenter/index.php/Home/User/userSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0000s ]
+SQL: INSERT INTO `log` (`type`,`text`,`create_date`) VALUES ('3','添加【人员（钟刚）】','2017-12-12 14:51:25') [ RunTime:0.0000s ]
+SQL: INSERT INTO `user` (`name`,`department`,`job`,`office_phone`,`mobile_phone`,`create_date`) VALUES ('钟刚','46','76','6684701','13827133799','2017-12-12 14:51:25') [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:51:25+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:52:19+08:00 ] ::1 /ITCenter/index.php/Home/User/userSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `log` (`type`,`text`,`create_date`) VALUES ('3','添加【人员（郑小波）】','2017-12-12 14:52:19') [ RunTime:0.0000s ]
+SQL: INSERT INTO `user` (`name`,`department`,`job`,`office_phone`,`mobile_phone`,`create_date`) VALUES ('郑小波','46','84','6684701','13822597929','2017-12-12 14:52:19') [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:52:19+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:53:02+08:00 ] ::1 /ITCenter/index.php/Home/User/userSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0000s ]
+SQL: INSERT INTO `log` (`type`,`text`,`create_date`) VALUES ('3','添加【人员（许远帆）】','2017-12-12 14:53:02') [ RunTime:0.0000s ]
+SQL: INSERT INTO `user` (`name`,`department`,`job`,`office_phone`,`mobile_phone`,`create_date`) VALUES ('许远帆','46','84','6684701','17875190125','2017-12-12 14:53:02') [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:53:02+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:53:51+08:00 ] ::1 /ITCenter/index.php/Home/User/userSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0000s ]
+SQL: INSERT INTO `log` (`type`,`text`,`create_date`) VALUES ('3','添加【人员（张麦龙）】','2017-12-12 14:53:51') [ RunTime:0.0000s ]
+SQL: INSERT INTO `user` (`name`,`department`,`job`,`office_phone`,`mobile_phone`,`create_date`) VALUES ('张麦龙','60','75','6689863','13822539007','2017-12-12 14:53:51') [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:53:51+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T14:54:21+08:00 ] ::1 /ITCenter/index.php/Home/User/userSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `log` (`type`,`text`,`create_date`) VALUES ('3','添加【人员（何燕群）】','2017-12-12 14:54:21') [ RunTime:0.0010s ]
+SQL: INSERT INTO `user` (`name`,`department`,`job`,`office_phone`,`mobile_phone`,`create_date`) VALUES ('何燕群','60','76','6689863','13922066228','2017-12-12 14:54:21') [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:54:21+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:54:48+08:00 ] ::1 /ITCenter/index.php/Home/User/userSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+SQL: INSERT INTO `log` (`type`,`text`,`create_date`) VALUES ('3','添加【人员（黄守超）】','2017-12-12 14:54:48') [ RunTime:0.0010s ]
+SQL: INSERT INTO `user` (`name`,`department`,`job`,`office_phone`,`mobile_phone`,`create_date`) VALUES ('黄守超','60','84','6689863','15768848297','2017-12-12 14:54:48') [ RunTime:0.0000s ]
+
+[ 2017-12-12T14:54:48+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:15+08:00 ] ::1 /itcenter/index.php/Home/Asset/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:13:15+08:00 ] ::1 /itcenter/index.php/Home/Asset/assetList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getIdData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `asset` [ RunTime:0.0020s ]
+SQL: SELECT `id` FROM `asset`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '1'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '2'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '3'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '5'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '4'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '1'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '2'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '3'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '5'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '4'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getAssetData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `asset` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sID D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 23 行.
+NOTIC: [8] Undefined index: sType D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 26 行.
+NOTIC: [8] Undefined index: sBrand D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 29 行.
+NOTIC: [8] Undefined index: sModel D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 32 行.
+NOTIC: [8] Undefined index: sNumber D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 35 行.
+NOTIC: [8] Undefined index: sNetWork D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 38 行.
+NOTIC: [8] Undefined index: sSource D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 41 行.
+NOTIC: [8] Undefined index: sState D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 44 行.
+NOTIC: [8] Undefined index: sPurchaseDateS D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 47 行.
+SQL: SELECT * FROM `asset` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `asset` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:13:18+08:00 ] ::1 /itcenter/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:13:18+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:13:18+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:18+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:18+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:18+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:13:19+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:13:19+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:14:11+08:00 ] ::1 /ITCenter/index.php/Home/User/tableExport
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `user` ORDER BY create_date desc  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:14:43+08:00 ] ::1 /itcenter/index.php/Home/Asset/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:14:43+08:00 ] ::1 /itcenter/index.php/Home/Asset/assetList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-12T16:14:43+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getIdData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `asset` [ RunTime:0.0010s ]
+SQL: SELECT `id` FROM `asset`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:14:43+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '2'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '1'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '3'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '4'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '5'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '1'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '2'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '3'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '5'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '4'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:14:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getAssetData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `asset` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sID D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 23 行.
+NOTIC: [8] Undefined index: sType D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 26 行.
+NOTIC: [8] Undefined index: sBrand D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 29 行.
+NOTIC: [8] Undefined index: sModel D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 32 行.
+NOTIC: [8] Undefined index: sNumber D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 35 行.
+NOTIC: [8] Undefined index: sNetWork D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 38 行.
+NOTIC: [8] Undefined index: sSource D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 41 行.
+NOTIC: [8] Undefined index: sState D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 44 行.
+NOTIC: [8] Undefined index: sPurchaseDateS D:\software\wamp\www\ITCenter\Application\Home\Controller\AssetController.class.php 第 47 行.
+SQL: SELECT * FROM `asset` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `asset` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Allocation/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/allocation.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getIdData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `asset` [ RunTime:0.0030s ]
+SQL: SELECT `id` FROM `asset`  [ RunTime:0.0030s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '2'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.011001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '1'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '3'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '4'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '5'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '1'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '2'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '3'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '5'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '4'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:51+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:52+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:19:52+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:19:52+08:00 ] ::1 /itcenter/index.php/Home/Allocation/getAllocatinData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sID D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sType D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sBrand D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sModel D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sNumber D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 34 行.
+NOTIC: [8] Undefined index: sNetWork D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 37 行.
+NOTIC: [8] Undefined index: sSource D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 40 行.
+NOTIC: [8] Undefined index: sPurchaseDateS D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 44 行.
+NOTIC: [8] Undefined index: sUseDateS D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 51 行.
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 58 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 61 行.
+NOTIC: [8] Undefined index: sState D:\software\wamp\www\ITCenter\Application\Home\Controller\AllocationController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `asset` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `allocation` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT asset.type AS type,asset.brand AS brand,asset.model AS model,asset.number AS number,asset.network AS network,asset.source AS source,asset.purchase_date AS purchase_date,asset.remark AS asset_remark,asset.state AS state,asset.create_date AS asset_create_date,allocation.id AS id,allocation.asset_id AS asset_id,allocation.user_id AS user_id,allocation.use_date AS use_date,allocation.remark AS allocation_remark,allocation.create_date AS allocation_create_date,user.name AS name,user.department AS department,user.job AS job,user.office_phone AS office_phone,user.mobile_phone AS mobile_phone,user.create_date AS user_create_date FROM asset asset RIGHT JOIN allocation allocation ON allocation.asset_id=asset.id LEFT JOIN user user ON allocation.user_id=user.id ORDER BY allocation.create_date desc LIMIT 0,10   [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:20:06+08:00 ] ::1 /itcenter/index.php/Home/Log/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+
+[ 2017-12-12T16:20:06+08:00 ] ::1 /itcenter/index.php/Home/Asset/logList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-12T16:20:07+08:00 ] ::1 /itcenter/index.php/Home/Log/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sType D:\software\wamp\www\ITCenter\Application\Home\Controller\LogController.class.php 第 15 行.
+NOTIC: [8] Undefined index: sCreateDateS D:\software\wamp\www\ITCenter\Application\Home\Controller\LogController.class.php 第 18 行.
+SQL: SELECT * FROM `log` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `log` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:39:15+08:00 ] ::1 /itcenter/index.php/Home/Asset/logList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-12T16:39:15+08:00 ] ::1 /itcenter/index.php/Home/Log/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `log` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sType D:\software\wamp\www\ITCenter\Application\Home\Controller\LogController.class.php 第 15 行.
+NOTIC: [8] Undefined index: sCreateDateS D:\software\wamp\www\ITCenter\Application\Home\Controller\LogController.class.php 第 18 行.
+SQL: SELECT * FROM `log` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `log` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:39:16+08:00 ] ::1 /itcenter/index.php/Home/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:39:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-12T16:39:16+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0020s ]
+
+[ 2017-12-12T16:39:16+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:39:16+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:39:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:39:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:39:16+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:39:56+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:39:56+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:39:56+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:39:56+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:39:56+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:39:56+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:39:56+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:41:37+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:41:38+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:41:38+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:38+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:38+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:38+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:38+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:59+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:41:59+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0080s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:59+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:59+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:59+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:41:59+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:41:59+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:19+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:42:19+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:42:19+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:42:19+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:19+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:19+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:42:19+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:33+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:42:33+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:33+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:42:33+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:33+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:33+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:33+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:53+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:42:54+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:42:54+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:42:54+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:54+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:42:54+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:42:54+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:43:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-12T16:43:16+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:43:16+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:43:16+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:43:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:43:16+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:43:17+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:43:23+08:00 ] ::1 /itcenter/index.php/Home/Asset/php%E6%96%87%E4%BB%B6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:php文件
+
+[ 2017-12-12T16:43:25+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:43:25+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:43:25+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:43:25+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:43:25+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:43:25+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:45:39+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:45:39+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:45:39+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:45:39+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:45:39+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:45:39+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:45:39+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:47:43+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:47:43+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:47:43+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:47:43+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.008001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:47:43+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:47:43+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:47:43+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:47:58+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T16:47:58+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:47:58+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:47:58+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:47:58+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T16:47:58+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T16:47:58+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:13:21+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T17:13:22+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:13:22+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:13:22+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:13:22+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:13:22+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:13:22+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:13:34+08:00 ] ::1 /ITCenter/index.php/Home/User/tableExport
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `user` ORDER BY create_date desc  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:14:14+08:00 ] ::1 /itcenter/index.php/Home/User/tableImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant SITE_PATH - assumed 'SITE_PATH' D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 241 行.
+NOTIC: [2] copy(SITE_PATH/Public/Upfile/20171212051414.xlsx): failed to open stream: No such file or directory D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 246 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-12T17:14:17+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:14:17+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:14:17+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:14:17+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:14:17+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:14:17+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:16:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T17:16:44+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:16:44+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.002000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018002s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:16:44+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:16:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:16:44+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:16:44+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:16:57+08:00 ] ::1 /itcenter/index.php/Home/User/tableImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] copy(/Public/Upfile/20171212051657.xlsx): failed to open stream: No such file or directory D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 246 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T17:17:00+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:17:00+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:17:00+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:17:00+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:17:00+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:17:00+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:30:09+08:00 ] ::1 /itcenter/index.php/Home/Asset/userList.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-12-12T17:30:09+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:09+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:09+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:30:09+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0000s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:09+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:09+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:30:20+08:00 ] ::1 /itcenter/index.php/Home/User/tableImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] copy(/Public/Upfile/20171212053020.xlsx): failed to open stream: No such file or directory D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 247 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-12T17:30:23+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:30:23+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0020s ]
+
+[ 2017-12-12T17:30:23+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:23+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:30:23+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:30:23+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:29+08:00 ] ::1 /itcenter/index.php/Home/User/tableImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] copy(/Public/Upfile/20171212053029.xlsx): failed to open stream: No such file or directory D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 247 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-12T17:30:32+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:32+08:00 ] ::1 /itcenter/index.php/Home/User/getNameData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`name` FROM `user`  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:30:32+08:00 ] ::1 /itcenter/index.php/Home/User/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:32+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '6'  [ RunTime:0.0000s ]
+
+[ 2017-12-12T17:30:32+08:00 ] ::1 /itcenter/index.php/Home/Asset/getOptionData/type/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT `id`,`option_name` FROM `option` WHERE `type` = '7'  [ RunTime:0.0010s ]
+
+[ 2017-12-12T17:30:32+08:00 ] ::1 /itcenter/index.php/Home/User/getUserData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `option` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `option`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: sName D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 22 行.
+NOTIC: [8] Undefined index: sDepartment D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 25 行.
+NOTIC: [8] Undefined index: sJob D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 28 行.
+NOTIC: [8] Undefined index: sOfficePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 31 行.
+NOTIC: [8] Undefined index: sMobilePhone D:\software\wamp\www\ITCenter\Application\Home\Controller\UserController.class.php 第 34 行.
+SQL: SELECT * FROM `user` ORDER BY create_date desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.0000s ]
+
