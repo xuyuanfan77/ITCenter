@@ -254,7 +254,8 @@ class AssetController extends CommonController {
 					->setCellValue('F1', '接入网络')
 					->setCellValue('G1', '设备来源')
 					->setCellValue('H1', '资产状态')
-					->setCellValue('I1', '购置日期');
+					->setCellValue('I1', '购置日期')
+					->setCellValue('J1', '备注');;
 		
 		$index = 2;
 		foreach($assetList as $key=>$data){
@@ -267,7 +268,8 @@ class AssetController extends CommonController {
 					->setCellValue('F'.$index, $optionArray[$data['network']]['option_name'])
 					->setCellValue('G'.$index, $optionArray[$data['source']]['option_name'])
 					->setCellValue('H'.$index, $optionArray[$data['state']]['option_name'])
-					->setCellValue('I'.$index, $data['purchase_date']);
+					->setCellValue('I'.$index, $data['purchase_date'])
+					->setCellValue('J'.$index, $data['remark']);
 			$index++;
 		}
 
@@ -283,4 +285,79 @@ class AssetController extends CommonController {
 		$this->ajaxReturn($result);
 	}
 	
+	public function tableImport(){
+ 		if (!empty($_FILES['assetExcel']['name'])){
+			$tmp_file = $_FILES['assetExcel']['tmp_name'];
+			$file_types = explode ( ".", $_FILES['assetExcel']['name'] );
+			$file_type = $file_types[count ($file_types)-1];
+			/*判别是不是.xlsx文件，判别是不是excel文件*/
+			if (strtolower($file_type )!= "xlsx"){
+				exit('error_fileType');
+			}
+			
+			$savePath = './Public/Upfile/';
+			$str = date('Ymdhis');
+			$file_name = $str.".".$file_type;
+			if (!copy( $tmp_file, $savePath . $file_name )){
+				exit('error_fileUpload');
+			}
+			import("Org.Util.PHPExcel");
+			import("Org.Util.PHPExcel.IOFactory");
+			$objReader = \PHPExcel_IOFactory::createReader('Excel2007');
+			$objReader->setReadDataOnly(true);
+			$objPHPExcel = $objReader->load($savePath.$file_name);
+			$objWorksheet = $objPHPExcel->getActiveSheet();
+			$highestRow = $objWorksheet->getHighestRow();
+			$highestColumn = $objWorksheet->getHighestColumn();
+			import("Org.Util.PHPExcel.Cell");
+			$highestColumnIndex = \PHPExcel_Cell::columnIndexFromString($highestColumn);
+			$excelData = array();
+			
+			$option = M('option');
+			$optionList = $option->select();
+			$optionArray = array();
+			foreach($optionList as $k=>$v){
+				$optionArray[$v['option_name']] = $v;
+			}
+			
+			for ($row = 2; $row <= $highestRow; $row++) {
+				for ($col = 0; $col < $highestColumnIndex; $col++) {
+					$value = (string)$objWorksheet->getCellByColumnAndRow($col, $row)->getValue();
+					if($col==1 || $col==2 || $col==5 || $col==6 || $col==7){
+						$excelData[$row][$col] = $optionArray[$value]['id'];
+					}else{
+						$excelData[$row][$col] = $value;
+					}
+				} 
+			}
+			
+			$dataNum = 0;
+			foreach($excelData as $k => $v ){
+				$condition['id'] = $v[0];
+				$assetData = M("asset")->where($condition)->find();
+				if($assetData){
+					continue;
+				}
+				$data['id'] = $v[0];
+				$data['type'] = $v[1];
+				$data['brand'] = $v[2];
+				$data['model'] = $v[3];
+				$data['number'] = $v[4];
+				$data['network'] = $v[5];
+				$data['source'] = $v[6];
+				$data['purchase_date'] = $v[8];
+				$data['remark'] = $v[9];
+				$data['state'] = $v[7];
+				$data['create_date'] = date("Y-m-d H:i:s",time()); 
+				$result = M("asset")->add($data);
+				if(!$result){
+					exit('error_writeMysql');
+				}
+				$dataNum++;
+			}
+			$this->ajaxReturn($dataNum);
+		}else{
+			exit('error_fileEmpty');
+		}
+	}
 }

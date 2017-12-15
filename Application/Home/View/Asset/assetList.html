@@ -211,6 +211,17 @@
 		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
 	</div>
 	
+	<div id="dlg2" class="easyui-dialog" style="width:315px;height:148px;padding:25px 60px"
+		closed="true" buttons="#dlg2-buttons">
+		<form id="fm2" method="post"  enctype="multipart/form-data">
+			<input id="assetExcel" class="easyui-filebox" name="assetExcel" data-options="buttonText:'浏览',prompt:'请选择xlsx文件'"/>
+		</form>
+	</div>
+	<div id="dlg2-buttons">
+		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="tableImport()">导入</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg2').dialog('close')">取消</a>
+	</div>
+	
 	<div id="cc" class="easyui-calendar"></div>
 	<div id='loadingDiv' style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: white; text-align: center;">    
 		<h1 style="top: 48%; position: relative;">    
@@ -255,7 +266,48 @@
 	</script>
 	<script>
 	function doImport(){
-		
+		$('#dlg2').dialog('open').dialog('setTitle','导入表格');
+	}
+	</script>
+	<script>
+	function tableImport(){
+		$('#fm2').form('submit', {
+			url:"/ITCenter/index.php/Home/Asset/tableImport",
+			success:function(data){
+				if(data=='error_fileType'){
+					$.messager.show({
+						title: '错误提示',
+						msg: '上传文件后缀不是xlsx！'
+					});
+					$('#dlg2').dialog('close');
+				}else if(data=='error_fileUpload'){
+					$.messager.show({
+						title: '错误提示',
+						msg: '上传文件失败！'
+					});
+					$('#dlg2').dialog('close');
+				}else if(data=='error_writeMysql'){
+					$.messager.show({
+						title: '错误提示',
+						msg: '数据写库失败！'
+					});
+					$('#dlg2').dialog('close');
+				}else if(data=='error_fileEmpty'){
+					$.messager.show({
+						title: '错误提示',
+						msg: '请选择上传的文件！'
+					});
+					$('#dlg2').dialog('close');
+				}else{
+					$('#dg').datagrid('reload');
+					$.messager.show({
+						title: '错误提示',
+						msg: '成功导入'+data+'条数据！'
+					});
+					$('#dlg2').dialog('close');
+				}
+			}
+		});
 	}
 	</script>
 	<script>

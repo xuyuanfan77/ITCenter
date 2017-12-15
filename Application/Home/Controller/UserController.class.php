@@ -296,9 +296,6 @@ class UserController extends CommonController {
 				$dataNum++;
 			}
 			$this->ajaxReturn($dataNum);
-			//exit(string($dataNum));
-			//echo array('success'=>$dataNum);
-			//return('success'=>$dataNum);
 		}else{
 			exit('error_fileEmpty');
 		}
