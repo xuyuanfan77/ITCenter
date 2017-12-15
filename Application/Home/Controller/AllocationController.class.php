@@ -302,17 +302,19 @@ class AllocationController extends CommonController {
 					->setCellValue('G1', '设备来源')
 					->setCellValue('H1', '资产状态')
 					->setCellValue('I1', '购置日期')
-					->setCellValue('J1', '使用人')
-					->setCellValue('K1', '部门')
-					->setCellValue('L1', '职务')
-					->setCellValue('M1', '办公电话')
-					->setCellValue('N1', '移动电话')
-					->setCellValue('O1', '分配日期');
+					->setCellValue('J1', '资产备注')
+					->setCellValue('K1', '使用人')
+					->setCellValue('L1', '部门')
+					->setCellValue('M1', '职务')
+					->setCellValue('N1', '办公电话')
+					->setCellValue('O1', '移动电话')
+					->setCellValue('P1', '分配日期')
+					->setCellValue('Q1', '分配备注');
 		
 		$index = 2;
 		foreach($allocationList as $key=>$data){
 			$objPHPExcel->setActiveSheetIndex(0)
-					->setCellValue('A'.$index, $data['id'])
+					->setCellValue('A'.$index, $data['asset_id'])
 					->setCellValue('B'.$index, $optionArray[$data['type']]['option_name'])
 					->setCellValue('C'.$index, $optionArray[$data['brand']]['option_name'])
 					->setCellValue('D'.$index, $data['model'])
@@ -321,12 +323,14 @@ class AllocationController extends CommonController {
 					->setCellValue('G'.$index, $optionArray[$data['source']]['option_name'])
 					->setCellValue('H'.$index, $optionArray[$data['state']]['option_name'])
 					->setCellValue('I'.$index, $data['purchase_date'])
-					->setCellValue('J'.$index, $data['name'])
-					->setCellValue('K'.$index, $optionArray[$data['department']]['option_name'])
-					->setCellValue('L'.$index, $optionArray[$data['job']]['option_name'])
-					->setCellValue('M'.$index, $data['office_phone'])
-					->setCellValue('N'.$index, $data['mobile_phone'])
-					->setCellValue('O'.$index, $data['use_date']);
+					->setCellValue('J'.$index, $data['asset_remark'])
+					->setCellValue('K'.$index, $data['name'])
+					->setCellValue('L'.$index, $optionArray[$data['department']]['option_name'])
+					->setCellValue('M'.$index, $optionArray[$data['job']]['option_name'])
+					->setCellValue('N'.$index, $data['office_phone'])
+					->setCellValue('O'.$index, $data['mobile_phone'])
+					->setCellValue('P'.$index, $data['use_date'])
+					->setCellValue('Q'.$index, $data['allocation_remark']);
 			$index++;
 		}
 
@@ -340,5 +344,105 @@ class AllocationController extends CommonController {
 		$result = json_encode(array('success'=>true));
 		$result = json_decode($result);
 		$this->ajaxReturn($result);
+	}
+	
+	public function tableImport(){
+ 		if (!empty($_FILES['allocationExcel']['name'])){
+			$tmp_file = $_FILES['allocationExcel']['tmp_name'];
+			$file_types = explode ( ".", $_FILES['allocationExcel']['name'] );
+			$file_type = $file_types[count ($file_types)-1];
+			/*判别是不是.xlsx文件，判别是不是excel文件*/
+			if (strtolower($file_type )!= "xlsx"){
+				exit('error_fileType');
+			}
+			
+			$savePath = './Public/Upfile/';
+			$str = date('Ymdhis');
+			$file_name = $str.".".$file_type;
+			if (!copy( $tmp_file, $savePath . $file_name )){
+				exit('error_fileUpload');
+			}
+			import("Org.Util.PHPExcel");
+			import("Org.Util.PHPExcel.IOFactory");
+			$objReader = \PHPExcel_IOFactory::createReader('Excel2007');
+			$objReader->setReadDataOnly(true);
+			$objPHPExcel = $objReader->load($savePath.$file_name);
+			$objWorksheet = $objPHPExcel->getActiveSheet();
+			$highestRow = $objWorksheet->getHighestRow();
+			$highestColumn = $objWorksheet->getHighestColumn();
+			import("Org.Util.PHPExcel.Cell");
+			$highestColumnIndex = \PHPExcel_Cell::columnIndexFromString($highestColumn);
+			$excelData = array();
+			
+			$option = M('option');
+			$optionList = $option->select();
+			$optionArray = array();
+			foreach($optionList as $k=>$v){
+				$optionArray[$v['option_name']] = $v;
+			}
+			
+			for ($row = 2; $row <= $highestRow; $row++) {
+				for ($col = 0; $col < $highestColumnIndex; $col++) {
+					$value = (string)$objWorksheet->getCellByColumnAndRow($col, $row)->getValue();
+					if($col==1 || $col==2 || $col==5 || $col==6 || $col==7 || $col==11 || $col==12){
+						$excelData[$row][$col] = $optionArray[$value]['id'];
+					}else{
+						$excelData[$row][$col] = $value;
+					}
+				} 
+			}
+			
+			$dataNum = 0;
+			foreach($excelData as $k => $v ){
+				$condition1['asset_id'] = $v[0];
+				$allocationData = M("allocation")->where($condition1)->find();
+				if($allocationData){
+					continue;
+				}
+				
+				$condition2['id'] = $v[0];
+				$assetData = M("asset")->where($condition2)->find();
+				if(!$assetData){
+					$data2['id'] = $v[0];
+					$data2['type'] = $v[1];
+					$data2['brand'] = $v[2];
+					$data2['model'] = $v[3];
+					$data2['number'] = $v[4];
+					$data2['network'] = $v[5];
+					$data2['source'] = $v[6];
+					$data2['purchase_date'] = $v[8];
+					$data2['remark'] = $v[9];
+					$data2['state'] = $v[7];
+					$data2['create_date'] = date("Y-m-d H:i:s",time()); 
+					M("asset")->add($data2);
+				}
+				 
+				$condition3['name'] = $v[10];
+				$userData = M("user")->where($condition3)->find();
+				if(!$userData){
+					$data3['name'] = $v[10];
+					$data3['department'] = $v[11];
+					$data3['job'] = $v[12];
+					$data3['office_phone'] = $v[13];
+					$data3['mobile_phone'] = $v[14];
+					$data3['create_date'] = date("Y-m-d H:i:s",time()); 
+					$userId = M("user")->add($data3);
+				}else{
+					$userId = $userData['id'];
+				}
+
+				$data1['asset_id'] = $v[0];
+				$data1['user_id'] = $userId;
+				$data1['use_date'] = $v[15];
+				$data1['remark'] = $v[16];
+				$data1['create_date'] = date("Y-m-d H:i:s",time()); 
+				M("allocation")->add($data1);
+				
+				$dataNum++;
+			}
+			$this->ajaxReturn($dataNum);
+		}else{
+			exit('error_fileEmpty');
+		}
 	}
 }

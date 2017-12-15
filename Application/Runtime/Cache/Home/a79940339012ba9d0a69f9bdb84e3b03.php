@@ -190,7 +190,7 @@
 		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
 	</div>
 	
-	<div id="dlg2" class="easyui-dialog" style="width:315px;height:148px;padding:25px 20px"
+	<div id="dlg2" class="easyui-dialog" style="width:315px;height:148px;padding:25px 60px"
 		closed="true" buttons="#dlg2-buttons">
 		<form id="fm2" method="post"  enctype="multipart/form-data">
 			<input id="userExcel" class="easyui-filebox" name="userExcel" data-options="buttonText:'浏览',prompt:'请选择xlsx文件'"/>
