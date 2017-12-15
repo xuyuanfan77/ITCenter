@@ -1,6 +1,8 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+
+
 class UserController extends CommonController {
 	public function index(){
         $this->redirect('Asset/userList');
@@ -228,21 +230,21 @@ class UserController extends CommonController {
 		
 	}
 	
-	public function tableImport(){			
+	public function tableImport(){
  		if (!empty($_FILES['userExcel']['name'])){
 			$tmp_file = $_FILES['userExcel']['tmp_name'];
 			$file_types = explode ( ".", $_FILES['userExcel']['name'] );
 			$file_type = $file_types[count ($file_types)-1];
 			/*判别是不是.xlsx文件，判别是不是excel文件*/
 			if (strtolower($file_type )!= "xlsx"){
-				$this->ajaxReturn('error1');
+				exit('error_fileType');
 			}
 			
 			$savePath = './Public/Upfile/';
 			$str = date('Ymdhis');
 			$file_name = $str.".".$file_type;
 			if (!copy( $tmp_file, $savePath . $file_name )){
-				$this->ajaxReturn('error2');
+				exit('error_fileUpload');
 			}
 			import("Org.Util.PHPExcel");
 			import("Org.Util.PHPExcel.IOFactory");
@@ -255,12 +257,32 @@ class UserController extends CommonController {
 			import("Org.Util.PHPExcel.Cell");
 			$highestColumnIndex = \PHPExcel_Cell::columnIndexFromString($highestColumn);
 			$excelData = array();
+			
+			$option = M('option');
+			$optionList = $option->select();
+			$optionArray = array();
+			foreach($optionList as $k=>$v){
+				$optionArray[$v['option_name']] = $v;
+			}
+			
 			for ($row = 2; $row <= $highestRow; $row++) {
-				for ($col = 0; $col < $highestColumnIndex; $col++) { 
-					$excelData[$row][$col] =(string)$objWorksheet->getCellByColumnAndRow($col, $row)->getValue();
+				for ($col = 0; $col < $highestColumnIndex; $col++) {
+					$value = (string)$objWorksheet->getCellByColumnAndRow($col, $row)->getValue();
+					if($col==1 || $col==2){
+						$excelData[$row][$col] = $optionArray[$value]['id'];
+					}else{
+						$excelData[$row][$col] = $value;
+					}
 				} 
-			}			
+			}
+			
+			$dataNum = 0;
 			foreach($excelData as $k => $v ){
+				$condition['name'] = $v[0];
+				$userData = M("user")->where($condition)->find();
+				if($userData){
+					continue;
+				}
 				$data['name'] = $v[0];
 				$data['department'] = $v[1];
 				$data['job'] = $v[2];
@@ -268,10 +290,17 @@ class UserController extends CommonController {
 				$data['mobile_phone'] = $v[4];
 				$data['create_date'] = date("Y-m-d H:i:s",time()); 
 				$result = M("user")->add($data);
+				if(!$result){
+					exit('error_writeMysql');
+				}
+				$dataNum++;
 			}
-			$this->ajaxReturn('1');
+			$this->ajaxReturn($dataNum);
+			//exit(string($dataNum));
+			//echo array('success'=>$dataNum);
+			//return('success'=>$dataNum);
 		}else{
-			$this->ajaxReturn('error3');
+			exit('error_fileEmpty');
 		}
 	}
 }

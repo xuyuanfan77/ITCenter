@@ -127,6 +127,7 @@
 						<div>
 							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doSearch()">搜索</a>
 							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="clearSearch()">清空</a>
+							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doImport()">导入</a>
 							<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doExport()">导出</a>
 						</div>
 					</td>
@@ -307,6 +308,11 @@
 	function clearSearch(){
 		$('#ff').form('clear');
 		doSearch();
+	}
+	</script>
+	<script>
+	function doImport(){
+		
 	}
 	</script>
 	<script>
