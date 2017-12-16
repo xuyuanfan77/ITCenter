@@ -49,7 +49,7 @@
 				<span>系统管理</span>
 				<ul>
 					<li>
-						<span><a style="text-decoration:none">退出</a></span>
+						<span><a style="text-decoration:none" href="<?php echo U('Index/logout');?>">退出</a></span>
 					</li>
 				</ul>
 			</li>

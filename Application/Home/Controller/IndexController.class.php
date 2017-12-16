@@ -22,4 +22,9 @@ class IndexController extends Controller {
             $this->error('账号或者密码输入错误！');
         }
 	}
+	
+	public function logout(){
+		session(null);
+		$this->redirect('Index/index');
+	}
 }
