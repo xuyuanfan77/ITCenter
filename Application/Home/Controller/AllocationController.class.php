@@ -167,29 +167,38 @@ class AllocationController extends CommonController {
 	public function allocationSave(){
 		$allocation = M("allocation");
 		$result = json_encode(array('errorMsg'=>'数据存在问题，请检查后输入！'));
-		if($_POST['aOperation']=='add'){
-			/*记录日志*/
-			$user = M("user");
-			$condition['id'] = $_POST['aUserID'];
-			$userData = $user->where($condition)->find();
-			$logData['user_name'] = $userData['name'];
-			$logData['asset_id'] = $_POST['aAssetID'];
+		
+		
 			
-			$log = M("log");
-			$data['type'] = 1;
-			$data['text'] = '添加【（' . $logData['user_name'] . '）占用资产（编号：' . $logData['asset_id'] . '）】';
-			$data['create_date'] = date("Y-m-d H:i:s",time());
-			$log->add($data);
-			/*记录日志*/
-			
-			$allocationData['asset_id'] = $_POST['aAssetID'];
-			$allocationData['user_id'] = $_POST['aUserID'];
-			$allocationData['use_date'] = $_POST['aUseDate'];
-			$allocationData['remark'] = $_POST['aRemark'];
-			$allocationData['create_date'] = date("Y-m-d H:i:s",time()); 
-			$allocation->add($allocationData);
-			
-			$result = json_encode(array('success'=>true,'data'=>$allocationData));
+		if($_POST['aOperation']=='add'){	
+			$condition1['asset_id'] = $_POST['aAssetID'];
+			$isAllocation = $allocation->where($condition1)->find();
+			if($isAllocation){
+				$result = json_encode(array('errorMsg'=>'该设备已被分配，请检查后输入！'));
+			}else{
+				/*记录日志*/
+				$user = M("user");
+				$condition['id'] = $_POST['aUserID'];
+				$userData = $user->where($condition)->find();
+				$logData['user_name'] = $userData['name'];
+				$logData['asset_id'] = $_POST['aAssetID'];
+				
+				$log = M("log");
+				$data['type'] = 1;
+				$data['text'] = '添加【（' . $logData['user_name'] . '）占用资产（编号：' . $logData['asset_id'] . '）】';
+				$data['create_date'] = date("Y-m-d H:i:s",time());
+				$log->add($data);
+				/*记录日志*/
+				
+				$allocationData['asset_id'] = $_POST['aAssetID'];
+				$allocationData['user_id'] = $_POST['aUserID'];
+				$allocationData['use_date'] = $_POST['aUseDate'];
+				$allocationData['remark'] = $_POST['aRemark'];
+				$allocationData['create_date'] = date("Y-m-d H:i:s",time()); 
+				$allocation->add($allocationData);
+				
+				$result = json_encode(array('success'=>true,'data'=>$allocationData));
+			}
 		}elseif($_POST['aOperation']=='edit'){
 			/*记录日志*/
 			$allocation = D('AllocationView');

@@ -126,8 +126,7 @@
 						url="{:U('Asset/getOptionData',array('type'=>1))}"
 						data-options="required:true,missingMessage:'必填'">
 					</td>
-					
-					
+				
 				</tr>
 				<tr>
 					<td>品牌：</td>
@@ -376,6 +375,7 @@
 	</script>
 	<script>	
 		function saveAsset(){
+			$('#aID').textbox('enable');
 			$.post("/ITCenter/index.php/Home/Asset/assetSave",$('#fm').serialize(),function(result){
 				if(result.success) {
 					$('#dg').datagrid('reload');

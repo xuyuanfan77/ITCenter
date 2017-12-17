@@ -530,11 +530,11 @@
 	</script>
 	<script>
 		function saveAllocation(){
+			$('#aAssetID').textbox('enable');
 			$.post("/ITCenter/index.php/Home/Allocation/allocationSave",$('#fm').serialize(),function(result){
 				if(result.success) {
 					$('#dg').datagrid('reload');
 					$('#dlg').dialog('close');
-					
 				} else {
 					$.messager.show({
 						title: '错误提示',
@@ -569,6 +569,7 @@
 	</script>
 	<script>		
 		function editAllocation(){
+			$('#aAssetID').textbox('disable');
 			var row = $('#dg').datagrid('getSelected');
 			$.post("/ITCenter/index.php/Home/Allocation/allocationEdit",row,function(result){
 				if(result.success) {

@@ -153,7 +153,7 @@ class AssetController extends CommonController {
 			$assetData['remark'] = $_POST['aRemark'];
 			$assetData['create_date'] = date("Y-m-d H:i:s",time()); 
 			$asset->save($assetData);
-			$result = json_encode(array('success'=>true));
+			$result = json_encode(array('success'=>true,'data'=>$_POST));
 		}else{
 			$result = json_encode(array('errorMsg'=>'数据存在问题，请检查后输入！'));
 		}

@@ -49,7 +49,7 @@
 				<span>系统管理</span>
 				<ul>
 					<li>
-						<span><a style="text-decoration:none">退出</a></span>
+						<span><a style="text-decoration:none" href="<?php echo U('Index/logout');?>">退出</a></span>
 					</li>
 				</ul>
 			</li>
@@ -183,8 +183,7 @@
 						url="<?php echo U('Asset/getOptionData',array('type'=>1));?>"
 						data-options="required:true,missingMessage:'必填'">
 					</td>
-					
-					
+				
 				</tr>
 				<tr>
 					<td>品牌：</td>
@@ -433,6 +432,7 @@
 	</script>
 	<script>	
 		function saveAsset(){
+			$('#aID').textbox('enable');
 			$.post("/ITCenter/index.php/Home/Asset/assetSave",$('#fm').serialize(),function(result){
 				if(result.success) {
 					$('#dg').datagrid('reload');
