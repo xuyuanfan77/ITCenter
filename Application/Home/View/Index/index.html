@@ -32,6 +32,6 @@
 			$('#ff').form('clear');
 		}
 	</script>
-	<div id="foot" style="width:100%;">Copyright 2017.11 by 廉江国家税务局信息中心 All rights reserved.</div>
+	<div id="foot" align="center" style="width:100%;">Copyright 2017.11 by 廉江国家税务局信息中心 All rights reserved.</div>
 </body>
 </html>
