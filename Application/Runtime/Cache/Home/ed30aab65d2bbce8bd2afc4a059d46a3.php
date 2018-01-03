@@ -40,7 +40,7 @@
 						</ul>
 					</li>
 					<li>
-						<span><a style="text-decoration:none" href="<?php echo U('Log/index');?>">资产日志</a></span>
+						<span><a style="text-decoration:none" href="<?php echo U('Log/index');?>">操作日志</a></span>
 					</li>
 				</ul>
 				

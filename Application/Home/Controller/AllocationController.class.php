@@ -90,11 +90,6 @@ class AllocationController extends CommonController {
 		$this->ajaxReturn($optionList);
 	}
 	
-	public function getIdData(){
-		$asset = M("asset");
-		$idList = $asset->field('id')->select();
-		$this->ajaxReturn($idList);
-	}
 	
 	public function getNameData(){
 		$user = M("user");

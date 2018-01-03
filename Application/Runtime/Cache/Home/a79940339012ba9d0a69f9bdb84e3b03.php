@@ -104,7 +104,7 @@
 	</div>
 	
 	<table id="dg" title="人员列表" class="easyui-datagrid"
-		url="<?php echo U('User/getUserData');?>" 
+		url="<?php echo U('User/getUserListData');?>" 
 		toolbar="#toolbar"
 		rownumbers="true" 
 		fitColumns="true" 
@@ -186,7 +186,7 @@
 		<a>表格已经生成，请点击下载！</a>
 	</div>
 	<div id="dlg1-buttons">
-		<a href="http://localhost/itcenter/user.xlsx" class="easyui-linkbutton" iconCls="icon-ok">下载</a>
+		<a id="downLoadButton" href="http://localhost/itcenter/user.xlsx" class="easyui-linkbutton" iconCls="icon-ok">下载</a>
 		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
 	</div>
 	
@@ -282,6 +282,7 @@
 		
 		$.post("/ITCenter/index.php/Home/User/tableExport",conditions,function(result){
 			if(result.success) {
+				$('#downLoadButton').attr("href","http://localhost/itcenter/ExpImp/Export/"+result.fileName); 
 				$('#dlg1').dialog('open').dialog('setTitle','下载表格');
 			} else {
 				$.messager.show({

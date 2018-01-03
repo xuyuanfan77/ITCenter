@@ -5,24 +5,12 @@ use Think\Controller;
 
 class UserController extends CommonController {
 	public function index(){
-        $this->redirect('Asset/userList');
+        $this->redirect('Asset/user');
     }
-	
-	public function getUserData(){
-		$option = M('option');
-		$optionList = $option->select();
-		$optionArray = array();
-		foreach($optionList as $index=>$data){
-			$optionArray[$data['id']] = $data;
-		}
-
-		$user = M('User');
-		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;  
-		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
-
+	private function getCondition(){
 		$condition = array();
 		if($_POST['sName']){
-			$condition['name'] = $_POST['sName'];
+			$condition['id'] = $_POST['sName'];
 		}
 		if($_POST['sDepartment']){
 			$condition['department'] = $_POST['sDepartment'];
@@ -36,48 +24,53 @@ class UserController extends CommonController {
 		if($_POST['sMobilePhone']){
 			$condition['mobile_phone'] = $_POST['sMobilePhone'];
 		}
+		return $condition;
+	}
+	
+	private function getUserData($id){
+		$user = M("User");
+		$condition['id'] = $id;
+		$userData = $user->where($condition)->find();
+		return $userData;
+	}
+	
+	public function getUserListData(){		
+		$allOptionText = $this->getAllOptionText();
 		
+		$condition = $this->getCondition();
+		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;  
+		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		$user = M('User');
 		$userList = $user->where($condition)->order('create_date desc')->page($page.','.$rows)->select();
-		$userArray = array();
-		foreach($userList as $index=>$data){
-			$data['department'] = $optionArray[$data['department']]['option_name'];
-			$data['job'] = $optionArray[$data['job']]['option_name'];
-			array_push($userArray,$data); 
+		$userListData = array();
+		foreach($userList as $k=>$v){
+			$v['department'] = $allOptionText[$v['department']]['option_name'];
+			$v['job'] = $allOptionText[$v['job']]['option_name'];
+			array_push($userListData,$v); 
 		}
-		$userCount = $user->where($condition)->count();
-		$userArray = array('total'=>$userCount,'rows'=>$userArray);
-		$userArray = json_encode($userArray);
-		$userArray = json_decode($userArray);
-		$this->ajaxReturn($userArray);
+		$userListData = array('total'=>count($userListData),'rows'=>$userListData);
+		$this->ajaxReturn($userListData);
     }
 	
 	public function getOptionData($type){
-		$option = M("option");
-		$condition['type'] = $type;
-		$optionList = $option->where($condition)->field('id,option_name')->select();
-		$this->ajaxReturn($optionList);
+		$partOptionIdAndText = $this->getPartOptionIdAndText($type);
+		$this->ajaxReturn($partOptionIdAndText);
 	}
 	
 	public function getNameData(){
-		$user = M("user");
-		$nameList = $user->field('id,name')->select();
-		$this->ajaxReturn($nameList);
+		$allUserIdAndName = $this->getAllUserIdAndName();
+		$this->ajaxReturn($allUserIdAndName);
 	}
 	
 	public function userSave(){
 		$user = M("user");
 		$result = json_encode(array('errorMsg'=>'数据存在问题，请检查后输入！'));
 		if($_POST['aOperation']=='add'){
-			/*记录日志*/
-			$logData['name'] = $_POST['aName'];
-			
-			$log = M("log");
-			$data['type'] = 3;
-			$data['text'] = '添加【人员（' . $logData['name'] . '）】';
-			$data['create_date'] = date("Y-m-d H:i:s",time());
-			$log->add($data);
-			/*记录日志*/
+			// 记录日志
+			$text = '添加【人员（' . $_POST['aName'] . '）】';
+			$this->addLogRecord(3, $text);
 		
+			// 添加用户
 			$userData['name'] = $_POST['aName'];
 			$userData['department'] = $_POST['aDepartment'];
 			$userData['job'] = $_POST['aJob'];
@@ -85,33 +78,23 @@ class UserController extends CommonController {
 			$userData['mobile_phone'] = $_POST['aMobilePhone'];
 			$userData['create_date'] = date("Y-m-d H:i:s",time()); 
 			$user->add($userData);
-			$result = json_encode(array('success'=>true));
+			$result = array('success'=>true);
 		}elseif($_POST['aOperation']=='edit'){
-			/*记录日志*/
-			$option = M('option');
-			$optionList = $option->select();
-			$optionArray = array();
-			foreach($optionList as $index=>$optionData){
-				$optionArray[$optionData['id']] = $optionData;
-			}
+			$allOptionText = $this->getAllOptionText();
+			$userData = $this->getUserData($_POST['aID']);
 			
-			$user = M("User");
-			$condition['id'] = $_POST['aID'];
-			$userData = $user->where($condition)->find();
+			// 记录日志
 			$logData['name1'] = $userData['name'];
 			$logData['name2'] = $_POST['aName'];
-			$logData['department'] = $optionArray[$_POST['aDepartment']]['option_name'];
-			$logData['job'] = $optionArray[$_POST['aJob']]['option_name'];
+			$logData['department'] = $allOptionText[$_POST['aDepartment']]['option_name'];
+			$logData['job'] = $allOptionText[$_POST['aJob']]['option_name'];
 			$logData['office_phone'] = $_POST['aOfficePhone'];
 			$logData['mobile_phone'] = $_POST['aMobilePhone'];
 			
-			$log = M("log");
-			$data['type'] = 3;
-			$data['text'] = '修改【人员（' . $logData['name1'] . '）】为【' . '姓名：' . $logData['name2'] . '；部门：' . $logData['department'] . '；职务：' . $logData['job'] . '；办公电话：' . $logData['office_phone'] . '；移动电话：' . $logData['mobile_phone'] . '】';
-			$data['create_date'] = date("Y-m-d H:i:s",time());
-			$log->add($data);
-			/*记录日志*/
+			$text = '修改【人员（' . $logData['name1'] . '）】为【' . '姓名：' . $logData['name2'] . '；部门：' . $logData['department'] . '；职务：' . $logData['job'] . '；办公电话：' . $logData['office_phone'] . '；移动电话：' . $logData['mobile_phone'] . '】';
+			$this->addLogRecord(3, $text);
 			
+			// 修改用户
 			$userData['id'] = $_POST['aID'];
 			$userData['name'] = $_POST['aName'];
 			$userData['department'] = $_POST['aDepartment'];
@@ -120,85 +103,43 @@ class UserController extends CommonController {
 			$userData['mobile_phone'] = $_POST['aMobilePhone'];
 			$userData['create_date'] = date("Y-m-d H:i:s",time());
 			$user->save($userData);
-			$result = json_encode(array('success'=>true));
+			$result = array('success'=>true);
 		}else{
-			$result = json_encode(array('errorMsg'=>'数据存在问题，请检查后输入！'));
+			$result = array('errorMsg'=>'数据存在问题，请检查后输入！');
 		}
-		$result = json_decode($result);
 		$this->ajaxReturn($result);
     }
 	
 	public function userEdit(){
-		$user = M("User");
-		$condition['id'] = $_POST['id'];
-		$userData = $user->where($condition)->find();
+		$userData = $this->getUserData($_POST['id']);
 		if($userData){
-			$result = json_encode(array('success'=>true,'data'=>$userData));
+			$result = array('success'=>true,'data'=>$userData);
 		}else{
-			$result = json_encode(array('errorMsg'=>'数据不存在！'));
+			$result = array('errorMsg'=>'数据不存在！');
 		}
-		$result = json_decode($result);
 		$this->ajaxReturn($result);
 	}
 	
 	public function userDestroy(){
-		/*记录日志*/		
+		// 记录日志
+		$userData = $this->getUserData($_POST['id']);
+		$text = '删除【人员（' . $userData['name'] . '）】';
+		$this->addLogRecord(3, $text);
+		
+		// 删除用户
 		$user = M("User");
 		$condition['id'] = $_POST['id'];
-		$userData = $user->where($condition)->find();
-		$logData['name'] = $userData['name'];
-		
-		$log = M("log");
-		$data['type'] = 3;
-		$data['text'] = '删除【人员（' . $logData['name'] . '）】';
-		$data['create_date'] = date("Y-m-d H:i:s",time());
-		$log->add($data);
-		/*记录日志*/
-		
-		$user = M("User");
-		$condition['id'] = $_POST['id'];
-		
 		$user->where($condition)->delete();
 
-		$result = json_encode(array('success'=>true));
-		$result = json_decode($result);
+		$result = array('success'=>true);
 		$this->ajaxReturn($result);
 	}
 	
 	public function tableExport(){
- 		$option = M('option');
-		$optionList = $option->select();
-		$optionArray = array();
-		foreach($optionList as $index=>$data){
-			$optionArray[$data['id']] = $data;
-		}
-
-		$user = M('User');
-		$condition = array();
-		if($_POST['sName']){
-			$condition['name'] = $_POST['sName'];
-		}
-		if($_POST['sDepartment']){
-			$condition['department'] = $_POST['sDepartment'];
-		}
-		if($_POST['sJob']){
-			$condition['job'] = $_POST['sJob'];
-		}
-		if($_POST['sOfficePhone']){
-			$condition['office_phone'] = $_POST['sOfficePhone'];
-		}
-		if($_POST['sMobilePhone']){
-			$condition['mobile_phone'] = $_POST['sMobilePhone'];
-		}
-		
-		$userList = $user->where($condition)->order('create_date desc')->select();
-
-		import("Org.Util.PHPExcel");
-		
-		// Create new PHPExcel object
+		Vendor("PHPExcel.PHPExcel");
 		$objPHPExcel = new \PHPExcel();
-
-		// Add some data
+		
+		// 设置表头部
 		$objPHPExcel->setActiveSheetIndex(0)
 					->setCellValue('A1', '姓名')
 					->setCellValue('B1', '部门')
@@ -206,76 +147,75 @@ class UserController extends CommonController {
 					->setCellValue('D1', '办公电话')
 					->setCellValue('E1', '移动电话');
 		
+		// 设置表内容
 		$index = 2;
-		foreach($userList as $key=>$data){
+		$allOptionText = $this->getAllOptionText();
+		$user = M('User');
+		$condition = $this->getCondition();
+		$userList = $user->where($condition)->order('create_date desc')->select();
+		foreach($userList as $k=>$v){
 			$objPHPExcel->setActiveSheetIndex(0)
-					->setCellValue('A'.$index, $data['name'])
-					->setCellValue('B'.$index, $optionArray[$data['department']]['option_name'])
-					->setCellValue('C'.$index, $optionArray[$data['job']]['option_name'])
-					->setCellValue('D'.$index, $data['office_phone'])
-					->setCellValue('E'.$index, $data['mobile_phone']);
+					->setCellValue('A'.$index, $v['name'])
+					->setCellValue('B'.$index, $allOptionText[$v['department']]['option_name'])
+					->setCellValue('C'.$index, $allOptionText[$v['job']]['option_name'])
+					->setCellValue('D'.$index, $v['office_phone'])
+					->setCellValue('E'.$index, $v['mobile_phone']);
 			$index++;
 		}
 
-		// Rename worksheet
+		// 设置表名
 		$objPHPExcel->getActiveSheet()->setTitle('人员列表');
-
-		import("Org.Util.PHPExcel.IOFactory");
-		$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
-		$objWriter->save('user.xlsx');
 		
-		$result = json_encode(array('success'=>true));
-		$result = json_decode($result);
+		Vendor("PHPExcel.PHPExcel.IOFactory");
+		$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
+		$fileName = 'User'.date('YmdHis').'.xlsx';
+		$objWriter->save('./ExpImp/Export/' . $fileName);
+		
+		$result = array('success'=>true,'fileName'=>$fileName);
 		$this->ajaxReturn($result);
 		
 	}
 	
 	public function tableImport(){
  		if (!empty($_FILES['userExcel']['name'])){
-			$tmp_file = $_FILES['userExcel']['tmp_name'];
-			$file_types = explode ( ".", $_FILES['userExcel']['name'] );
-			$file_type = $file_types[count ($file_types)-1];
-			/*判别是不是.xlsx文件，判别是不是excel文件*/
-			if (strtolower($file_type )!= "xlsx"){
+			// 判别文件类型是否正确
+			$fileTypes = explode ( ".", $_FILES['userExcel']['name'] );
+			$fileType = $fileTypes[count ($fileTypes)-1];
+			if (strtolower($fileType)!= "xlsx"){
 				exit('error_fileType');
 			}
-			
-			$savePath = './Public/Upfile/';
-			$str = date('Ymdhis');
-			$file_name = $str.".".$file_type;
-			if (!copy( $tmp_file, $savePath . $file_name )){
+			// 判断拷贝是否成功
+			$savePath = './ExpImp/Import/';
+			$fileName = date('YmdHis').".".$fileType;
+			$tempFile = $_FILES['userExcel']['tmp_name'];
+			if (!copy( $tempFile, $savePath.$fileName )){
 				exit('error_fileUpload');
 			}
-			import("Org.Util.PHPExcel");
-			import("Org.Util.PHPExcel.IOFactory");
+			
+			Vendor("PHPExcel.PHPExcel");
 			$objReader = \PHPExcel_IOFactory::createReader('Excel2007');
 			$objReader->setReadDataOnly(true);
-			$objPHPExcel = $objReader->load($savePath.$file_name);
+			$objPHPExcel = $objReader->load($savePath.$fileName);
 			$objWorksheet = $objPHPExcel->getActiveSheet();
 			$highestRow = $objWorksheet->getHighestRow();
 			$highestColumn = $objWorksheet->getHighestColumn();
-			import("Org.Util.PHPExcel.Cell");
 			$highestColumnIndex = \PHPExcel_Cell::columnIndexFromString($highestColumn);
+			
+			// 将Excel表的数据写入数组
+			$allOptionId = $this->getAllOptionId();
 			$excelData = array();
-			
-			$option = M('option');
-			$optionList = $option->select();
-			$optionArray = array();
-			foreach($optionList as $k=>$v){
-				$optionArray[$v['option_name']] = $v;
-			}
-			
 			for ($row = 2; $row <= $highestRow; $row++) {
 				for ($col = 0; $col < $highestColumnIndex; $col++) {
 					$value = (string)$objWorksheet->getCellByColumnAndRow($col, $row)->getValue();
 					if($col==1 || $col==2){
-						$excelData[$row][$col] = $optionArray[$value]['id'];
+						$excelData[$row][$col] = $allOptionId[$value]['id'];
 					}else{
 						$excelData[$row][$col] = $value;
 					}
 				} 
 			}
 			
+			// 将数组的数据写入数据库
 			$dataNum = 0;
 			foreach($excelData as $k => $v ){
 				$condition['name'] = $v[0];
