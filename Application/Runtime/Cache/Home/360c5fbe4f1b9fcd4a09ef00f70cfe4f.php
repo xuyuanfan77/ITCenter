@@ -64,9 +64,10 @@
 					<td>资产编号：</td>
 					<td>
 						<input id="sID" class="easyui-combobox" type="text" name="sID"
+							panelHeight="auto"
 							valueField="id" 
 							textField="id" 
-							url="<?php echo U('Allocation/getIdData');?>">
+							url="<?php echo U('Asset/getAssetIdList');?>">
 					</td>
 					<td>类型：</td>
 					<td>
@@ -74,14 +75,14 @@
 							panelHeight="auto"
 							valueField="id" 
 							textField="option_name" 
-							url="<?php echo U('Asset/getOptionData',array('type'=>1));?>">
+							url="<?php echo U('Allocation/getOptionData',array('type'=>1));?>">
 					</td>
 					<td>品牌：</td>
 					<td>
 						<input id="sBrand" class="easyui-combobox" name="sBrand"
 						valueField="id" 
 						textField="option_name" 
-						url="<?php echo U('Asset/getOptionData',array('type'=>2));?>">
+						url="<?php echo U('Allocation/getOptionData',array('type'=>2));?>">
 					</td>
 					<td>型号：</td>
 					<td>
@@ -100,21 +101,21 @@
 						panelHeight="auto"
 						valueField="id" 
 						textField="option_name" 
-						url="<?php echo U('Asset/getOptionData',array('type'=>3));?>">
+						url="<?php echo U('Allocation/getOptionData',array('type'=>3));?>">
 					</td>
 					<td>使用人：</td>
 					<td>
 						<input id="sName" class="easyui-combobox" type="text" name="sName"
 						valueField="id" 
 						textField="name" 
-						url="<?php echo U('Allocation/getNameData');?>">
+						url="<?php echo U('User/getUserNameList');?>">
 					</td>
 					<td>使用部门：</td>
 					<td>
 						<input id="sDepartment" class="easyui-combobox" name="sDepartment"
 						valueField="id" 
 						textField="option_name" 
-						url="<?php echo U('Asset/getOptionData',array('type'=>6));?>">
+						url="<?php echo U('Allocation/getOptionData',array('type'=>6));?>">
 					</td>
 					<td>购置日期(S)：</td>
 					<td>
@@ -140,7 +141,7 @@
 						panelHeight="auto"
 						valueField="id" 
 						textField="option_name" 
-						url="<?php echo U('Asset/getOptionData',array('type'=>4));?>">
+						url="<?php echo U('Allocation/getOptionData',array('type'=>4));?>">
 					</td>
 					<td>设备来源：</td>
 					<td>
@@ -148,7 +149,7 @@
 						panelHeight="auto"
 						valueField="id" 
 						textField="option_name" 
-						url="<?php echo U('Asset/getOptionData',array('type'=>5));?>">
+						url="<?php echo U('Allocation/getOptionData',array('type'=>5));?>">
 					</td>
 					<td></td>
 					<td>
@@ -163,11 +164,13 @@
 	</div>
 	
 	<table id="dg" title="配置列表" class="easyui-datagrid"
-		url="<?php echo U('Allocation/getAllocatinData');?>" 
+		url="<?php echo U('Allocation/getAllocatinListData');?>" 
 		toolbar="#toolbar"
 		rownumbers="true" 
 		fitColumns="true" 
-		singleSelect="true">
+		singleSelect="true"
+		pageSize="20"
+		pagination="true">
 		<thead>
 			<tr>
 				<th data-options="field:'asset_id',width:'40'">资产编号</th>
@@ -276,7 +279,7 @@
 						valueField="id" 
 						textField="name" 
 						data-options="required:true,missingMessage:'必填'"
-						url="<?php echo U('Allocation/getNameData');?>">
+						url="<?php echo U('User/getUserNameList');?>">
 					</td>
 					<td><a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="getUserData()">提取数据</a></td>
 					<td></td>
@@ -296,7 +299,7 @@
 						editable="false"
 						valueField="id" 
 						textField="option_name" 
-						url="<?php echo U('Asset/getOptionData',array('type'=>6));?>">
+						url="<?php echo U('Asset/getOptionData',array('type'=>7));?>">
 					</td>
 				</tr>
 				<tr>
@@ -339,8 +342,8 @@
 		<a>表格已经生成，请点击下载！</a>
 	</div>
 	<div id="dlg1-buttons">
-		<a href="http://localhost/itcenter/allocation.xlsx" class="easyui-linkbutton" iconCls="icon-ok">下载</a>
-		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
+		<a id="downLoadButton" class="easyui-linkbutton" iconCls="icon-ok">下载</a>
+		<a class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
 	</div>
 	
 	<div id="dlg2" class="easyui-dialog" style="width:315px;height:148px;padding:25px 60px"
@@ -465,6 +468,7 @@
 		
 		$.post("/ITCenter/index.php/Home/Allocation/tableExport",conditions,function(result){
 			if(result.success) {
+				$('#downLoadButton').attr("href","http://localhost/itcenter/ExpImp/Export/"+result.fileName); 
 				$('#dlg1').dialog('open').dialog('setTitle','下载表格');
 			} else {
 				$.messager.show({

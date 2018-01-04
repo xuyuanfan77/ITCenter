@@ -27,6 +27,12 @@ class UserController extends CommonController {
 		return $condition;
 	}
 	
+	public function getUserNameList(){
+		$user = M("user");
+		$userNameList = $user->field('id,name')->select();
+		$this->ajaxReturn($userNameList);
+	}
+	
 	private function getUserData($id){
 		$user = M("User");
 		$condition['id'] = $id;

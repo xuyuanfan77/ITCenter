@@ -88,7 +88,7 @@ class AssetController extends CommonController {
 		if($_POST['aOperation']=='add'){
 			if($_POST['aID']){
 				// 记录日志
-				$text = '添加【资产（编号：' . $logData['aID'] . '）】';
+				$text = '添加【资产（编号：' . $_POST['aID'] . '）】';
 				$this->addLogRecord(2, $text);
 
 				// 添加资产
@@ -114,23 +114,6 @@ class AssetController extends CommonController {
 				$result = array('errorMsg'=>'ID号不能为空，请检查后输入！');
 			}
 		}elseif($_POST['aOperation']=='edit'){
-			// 记录日志
-			$allOptionText = $this->getAllOptionText();
-			$condition['id'] = $_POST['aID'];
-			$logData = $asset->where($condition)->find();
-			$logData['asset_id'] = $_POST['aID'];
-			$logData['type'] = $allOptionText[$logData['type']]['option_name'];
-			$logData['brand'] = $allOptionText[$logData['brand']]['option_name'];
-			$logData['model'] = $_POST['aModel'];
-			$logData['number'] = $_POST['aNumber'];
-			$logData['network'] = $allOptionText[$logData['network']]['option_name'];
-			$logData['source'] = $allOptionText[$logData['source']]['option_name'];
-			$logData['state'] = $allOptionText[$logData['state']]['option_name'];	
-			$logData['purchase_date'] = $_POST['aPurchaseDate'];
-
-			$text = '修改【资产（编号：' . $logData['asset_id'] . '）】为【类型：' . $logData['type'] . '；品牌：' . $logData['brand'] . '；型号：' . $logData['model'] . '；序列号：' . $logData['number'] . '；接入网络：' . $logData['network'] . '；设备来源：' . $logData['source'] . '；设备状态：' . $logData['state'] . '；购置时间：' . $logData['purchase_date'] . '】';
-			$this->addLogRecord(2, $text);
-			
 			// 修改资产
 			$assetData['id'] = $_POST['aID'];
 			$assetData['type'] = $_POST['aType'];
@@ -144,6 +127,22 @@ class AssetController extends CommonController {
 			$assetData['remark'] = $_POST['aRemark'];
 			$assetData['create_date'] = date("Y-m-d H:i:s",time()); 
 			$asset->save($assetData);
+			
+			// 记录日志
+			$allOptionText = $this->getAllOptionText();
+			$logData['asset_id'] = $_POST['aID'];
+			$logData['type'] = $allOptionText[$_POST['aType']]['option_name'];
+			$logData['brand'] = $allOptionText[$_POST['aBrand']]['option_name'];
+			$logData['model'] = $_POST['aModel'];
+			$logData['number'] = $_POST['aNumber'];
+			$logData['network'] = $allOptionText[$_POST['aNetWork']]['option_name'];
+			$logData['source'] = $allOptionText[$_POST['aSource']]['option_name'];
+			$logData['state'] = $allOptionText[$_POST['aState']]['option_name'];	
+			$logData['purchase_date'] = $_POST['aPurchaseDate'];
+
+			$text = '修改【资产（编号：' . $logData['asset_id'] . '）】为【类型：' . $logData['type'] . '；品牌：' . $logData['brand'] . '；型号：' . $logData['model'] . '；序列号：' . $logData['number'] . '；接入网络：' . $logData['network'] . '；设备来源：' . $logData['source'] . '；设备状态：' . $logData['state'] . '；购置时间：' . $logData['purchase_date'] . '】';
+			$this->addLogRecord(2, $text);
+			
 			$result = array('success'=>true);
 		}else{
 			$result = array('errorMsg'=>'数据存在问题，请检查后输入！');
@@ -198,18 +197,18 @@ class AssetController extends CommonController {
 		$condition = $this->getCondition();		
 		$assetList = $asset->where($condition)->order('create_date desc')->select();
 		$allOptionText = $this->getAllOptionText();
-		foreach($assetList as $key=>$data){
+		foreach($assetList as $k=>$v){
 			$objPHPExcel->setActiveSheetIndex(0)
-					->setCellValue('A'.$index, $data['id'])
-					->setCellValue('B'.$index, $allOptionText[$data['type']]['option_name'])
-					->setCellValue('C'.$index, $allOptionText[$data['brand']]['option_name'])
-					->setCellValue('D'.$index, $data['model'])
-					->setCellValue('E'.$index, $data['number'])
-					->setCellValue('F'.$index, $allOptionText[$data['network']]['option_name'])
-					->setCellValue('G'.$index, $allOptionText[$data['source']]['option_name'])
-					->setCellValue('H'.$index, $allOptionText[$data['state']]['option_name'])
-					->setCellValue('I'.$index, $data['purchase_date'])
-					->setCellValue('J'.$index, $data['remark']);
+					->setCellValue('A'.$index, $v['id'])
+					->setCellValue('B'.$index, $allOptionText[$v['type']]['option_name'])
+					->setCellValue('C'.$index, $allOptionText[$v['brand']]['option_name'])
+					->setCellValue('D'.$index, $v['model'])
+					->setCellValue('E'.$index, $v['number'])
+					->setCellValue('F'.$index, $allOptionText[$v['network']]['option_name'])
+					->setCellValue('G'.$index, $allOptionText[$v['source']]['option_name'])
+					->setCellValue('H'.$index, $allOptionText[$v['state']]['option_name'])
+					->setCellValue('I'.$index, $v['purchase_date'])
+					->setCellValue('J'.$index, $v['remark']);
 			$index++;
 		}
 
@@ -235,7 +234,7 @@ class AssetController extends CommonController {
 			}
 			// 判断拷贝是否成功
 			$savePath = './ExpImp/Import/';
-			$fileName = date('Ymdhis').".".$fileType;
+			$fileName = date('YmdHis').".".$fileType;
 			$tempFile = $_FILES['assetExcel']['tmp_name'];
 			if (!copy( $tempFile, $savePath . $fileName )){
 				exit('error_fileUpload');

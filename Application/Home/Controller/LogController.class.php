@@ -3,14 +3,10 @@ namespace Home\Controller;
 use Think\Controller;
 class LogController extends CommonController {
 	public function index(){
-        $this->redirect('Asset/logList');
+        $this->redirect('Asset/log');
     }
 	
-	public function getUserData(){
-		$log = M('Log');
-		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;  
-		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
-
+	private function getCondition(){
 		$condition = array();
 		if($_POST['sType']){
 			$condition['type'] = $_POST['sType'];
@@ -22,9 +18,16 @@ class LogController extends CommonController {
 				$condition['create_date'] = array(array('gt',$_POST['sCreateDateS']),array('lt',date("Y-m-d H:i:s",time())));
 			}
 		}
-		
+		return $condition;
+	}
+	
+	public function getLogListData(){
+		$condition = $this->getCondition();
+		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;  
+		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		$log = M('Log');
 		$logList = $log->where($condition)->order('create_date desc')->page($page.','.$rows)->select();
-		$logArray = array();
+		$logListData = array();
 		foreach($logList as $index=>$data){
 			switch ($data['type'])
 			{
@@ -40,13 +43,9 @@ class LogController extends CommonController {
 			default:
 				$data['type'] = '未知';
 			}
-			array_push($logArray,$data); 
+			array_push($logListData,$data); 
 		}
-		
-		$logCount = $log->where($condition)->count();
-		$logArray = array('total'=>$logCount,'rows'=>$logArray);
-		$logArray = json_encode($logArray);
-		$logArray = json_decode($logArray);
-		$this->ajaxReturn($logArray);
+		$logListData = array('total'=>count($logListData),'rows'=>$logListData);
+		$this->ajaxReturn($logListData);
     }
 }
