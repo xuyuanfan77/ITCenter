@@ -15,19 +15,19 @@ class AllocationController extends CommonController {
 			$condition['type'] = $_POST['sType'];
 		}
 		if($_POST['sBrand']){
-			$condition['name'] = $_POST['sBrand'];
+			$condition['brand'] = $_POST['sBrand'];
 		}
 		if($_POST['sModel']){
-			$condition['name'] = $_POST['sModel'];
+			$condition['model'] = $_POST['sModel'];
 		}
 		if($_POST['sNumber']){
-			$condition['name'] = $_POST['sNumber'];
+			$condition['number'] = $_POST['sNumber'];
 		}
 		if($_POST['sNetWork']){
-			$condition['name'] = $_POST['sNetWork'];
+			$condition['network'] = $_POST['sNetWork'];
 		}
 		if($_POST['sSource']){
-			$condition['name'] = $_POST['sSource'];
+			$condition['source'] = $_POST['sSource'];
 		}
 		if($_POST['sPurchaseDateS']){
 			if($_POST['sPurchaseDateE']){
@@ -37,14 +37,14 @@ class AllocationController extends CommonController {
 			}
 		}
 		if($_POST['sUseDateS']){
-			if($_POST['sPurchaseDateE']){
+			if($_POST['sUseDateE']){
 				$condition['use_date'] = array(array('gt',$_POST['sUseDateS']),array('lt',$_POST['sUseDateE']));
 			}else{
 				$condition['use_date'] = array(array('gt',$_POST['sUseDateS']),array('lt',date("Y-m-d H:i:s",time())));
 			}
 		}
 		if($_POST['sName']){
-			$condition['name'] = $_POST['sName'];
+			$condition['user_id'] = $_POST['sName'];
 		}
 		if($_POST['sDepartment']){
 			$condition['department'] = $_POST['sDepartment'];
@@ -74,6 +74,8 @@ class AllocationController extends CommonController {
 			$v['job'] = $allOptionText[$v['job']]['option_name'];
 			array_push($allocationListData,$v); 
 		}
+		$allocationCount = $allocation->where($condition)->count();
+		$allocationListData = array('total'=>$allocationCount,'rows'=>$allocationListData);
 		$this->ajaxReturn($allocationListData);
     }
 	

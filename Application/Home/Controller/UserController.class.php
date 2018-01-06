@@ -54,7 +54,8 @@ class UserController extends CommonController {
 			$v['job'] = $allOptionText[$v['job']]['option_name'];
 			array_push($userListData,$v); 
 		}
-		$userListData = array('total'=>count($userListData),'rows'=>$userListData);
+		$userCount = $user->where($condition)->count();
+		$userListData = array('total'=>$userCount,'rows'=>$userListData);
 		$this->ajaxReturn($userListData);
     }
 	

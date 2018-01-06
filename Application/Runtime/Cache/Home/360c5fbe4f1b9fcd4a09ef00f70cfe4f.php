@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="/itcenter/Public/easyUI/jquery.min.js"></script>
 	<script type="text/javascript" src="/itcenter/Public/easyUI/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="/itcenter/Public/easyUI/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="/itcenter/Public/common.js"></script>
 </head>
 
 <body class="easyui-layout">
@@ -57,8 +58,9 @@
 	</div>
 	<div data-options="region:'center'" style="border:0px">
 		
+	<script type="text/javascript" src="/itcenter/Public/allocation.js"></script>
 	<div class="easyui-panel" title="条件筛选" style="width:100%;padding:15px">
-		<form id="ff" method="post">
+		<form id="sForm" method="post">
 			<table cellpadding="5">
 				<tr>
 					<td>资产编号：</td>
@@ -119,21 +121,21 @@
 					</td>
 					<td>购置日期(S)：</td>
 					<td>
-						<input id="sPurchaseDateS" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#cc'">
+						<input id="sPurchaseDateS" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#calendar'">
 					</td>
 					<td>购置日期(E)：</td>
 					<td>
-						<input id="sPurchaseDateE" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#cc'">
+						<input id="sPurchaseDateE" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#calendar'">
 					</td>
 				</tr>
 				<tr>
 					<td>分配日期(S)：</td>
 					<td>
-						<input id="sUseDateS" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#cc'">
+						<input id="sUseDateS" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#calendar'">
 					</td>
 					<td>分配日期(E)：</td>
 					<td>
-						<input id="sUseDateE" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#cc'">
+						<input id="sUseDateE" class="easyui-datetimebox" editable="false" data-options="sharedCalendar:'#calendar'">
 					</td>
 					<td>资产状态：</td>
 					<td>
@@ -153,17 +155,17 @@
 					</td>
 					<td></td>
 					<td>
-						<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doSearch()">搜索</a>
-						<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="clearSearch()">清空</a>
-						<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doImport()">导入</a>
-						<a href="#" class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doExport()">导出</a>
+						<a class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doSearch()">搜索</a>
+						<a class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="clearSearch()">清空</a>
+						<a class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doImport()">导入</a>
+						<a class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doExport()">导出</a>
 					</td>
 				</tr>
 			</table>
 		</form>
 	</div>
 	
-	<table id="dg" title="配置列表" class="easyui-datagrid"
+	<table id="cDatagrid" title="配置列表" class="easyui-datagrid"
 		url="<?php echo U('Allocation/getAllocatinListData');?>" 
 		toolbar="#toolbar"
 		rownumbers="true" 
@@ -190,13 +192,14 @@
 		</thead>
 	</table>
 	<div id="toolbar">
-		<a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newAllocation()">添加</a>
-		<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAllocation()">修改</a>
-		<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAllocation()">删除</a>
+		<a class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newAllocation()">添加</a>
+		<a class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editAllocation()">修改</a>
+		<a class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyAllocation()">删除</a>
 	</div>
 	
-	<div id="dlg" class="easyui-dialog" style="width:640px;height:540px;padding:10px 20px"
-		closed="true" buttons="#dlg-buttons">
+	<!-- 添加对话框 -->
+	<div id="dialog1" class="easyui-dialog" style="width:640px;height:540px;padding:10px 20px"
+		closed="true" buttons="#dialog1-buttons">
 		<form id="fm" method="post">
 			<table cellpadding="5">
 				<tr>
@@ -204,7 +207,7 @@
 					<td>
 						<input id="aAssetID" class="easyui-textbox" type="text" name="aAssetID" style="width:200px;" data-options="required:true,missingMessage:'必填'"></input>
 					</td>
-					<td><a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="getAssetData()">提取数据</a></td>
+					<td><a class="easyui-linkbutton" style="width:66px;height:25px;" onclick="getAssetData()">提取数据</a></td>
 					<td></td>
 				</tr>
 				<tr>
@@ -269,7 +272,7 @@
 					</td>
 					<td>购置日期：</td>
 					<td>
-						<input id="sPurchaseDate" class="easyui-datetimebox" name="sPurchaseDate" data-options="sharedCalendar:'#cc'" editable="false" style="width:200px" disabled="disabled">
+						<input id="sPurchaseDate" class="easyui-datetimebox" name="sPurchaseDate" data-options="sharedCalendar:'#calendar'" editable="false" style="width:200px" disabled="disabled">
 					</td>
 				</tr>
 				<tr>
@@ -281,7 +284,7 @@
 						data-options="required:true,missingMessage:'必填'"
 						url="<?php echo U('User/getUserNameList');?>">
 					</td>
-					<td><a href="#" class="easyui-linkbutton" style="width:66px;height:25px;" onclick="getUserData()">提取数据</a></td>
+					<td><a class="easyui-linkbutton" style="width:66px;height:25px;" onclick="getUserData()">提取数据</a></td>
 					<td></td>
 				</tr>
 				<tr>
@@ -315,7 +318,7 @@
 				<tr>
 					<td>分配日期</td>
 					<td>
-						<input id="aUseDate" class="easyui-datetimebox" name="aUseDate" data-options="sharedCalendar:'#cc'" editable="false" style="width:200px" required missingMessage="必填">
+						<input id="aUseDate" class="easyui-datetimebox" name="aUseDate" data-options="sharedCalendar:'#calendar'" editable="false" style="width:200px" required missingMessage="必填">
 					</td>
 					<td>
 						<input id="aOperation" type="hidden" name="aOperation" value="">
@@ -332,295 +335,39 @@
 			</table>
 		</form>
 	</div>
-	<div id="dlg-buttons">
-		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveAllocation()">保存</a>
-		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	<div id="dialog1-buttons">
+		<a class="easyui-linkbutton" iconCls="icon-ok" onclick="saveAllocation()">保存</a>
+		<a class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dialog1').dialog('close')">取消</a>
 	</div>
 	
-	<div id="dlg1" class="easyui-dialog" style="width:300px;height:150px;padding:30px 20px"
-		closed="true" buttons="#dlg1-buttons">
+	<!-- 导出对话框 -->
+	<div id="dialog2" class="easyui-dialog" style="width:300px;height:150px;padding:30px 20px"
+		closed="true" buttons="#dialog2-buttons">
 		<a>表格已经生成，请点击下载！</a>
 	</div>
-	<div id="dlg1-buttons">
+	<div id="dialog2-buttons">
 		<a id="downLoadButton" class="easyui-linkbutton" iconCls="icon-ok">下载</a>
-		<a class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg1').dialog('close')">取消</a>
+		<a class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dialog2').dialog('close')">取消</a>
 	</div>
 	
-	<div id="dlg2" class="easyui-dialog" style="width:315px;height:148px;padding:25px 60px"
-		closed="true" buttons="#dlg2-buttons">
-		<form id="fm2" method="post"  enctype="multipart/form-data">
+	<!-- 导入对话框 -->
+	<div id="dialog3" class="easyui-dialog" style="width:315px;height:148px;padding:25px 60px"
+		closed="true" buttons="#dialog3-buttons">
+		<form id="iForm" method="post"  enctype="multipart/form-data">
 			<input id="allocationExcel" class="easyui-filebox" name="allocationExcel" data-options="buttonText:'浏览',prompt:'请选择xlsx文件'"/>
 		</form>
 	</div>
-	<div id="dlg2-buttons">
-		<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="tableImport()">导入</a>
-		<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg2').dialog('close')">取消</a>
+	<div id="dialog3-buttons">
+		<a class="easyui-linkbutton" iconCls="icon-ok" onclick="tableImport()">导入</a>
+		<a class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dialog3').dialog('close')">取消</a>
 	</div>
 	
-	<div id="cc" class="easyui-calendar"></div>
+	<div id="calendar" class="easyui-calendar"></div>
 	<div id='loadingDiv' style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: white; text-align: center;">    
 		<h1 style="top: 48%; position: relative;">    
-			<font color="#15428B">努力加载中···</font>    
+			<font color="#15428B">努力加载中···</font>
 		</h1>    
 	</div> 
-	<script>
-		$(function(){     
-			var curr_time=new Date();     
-			var strDate=curr_time.getFullYear()+"-";     
-			strDate +=curr_time.getMonth()+1+"-";     
-			strDate +=curr_time.getDate()+"-";     
-			strDate +=" "+curr_time.getHours()+":";     
-			strDate +=curr_time.getMinutes()+":";     
-			strDate +=curr_time.getSeconds();     
-			$("#aUseDate").datetimebox("setValue",strDate);
-		});  
-	</script>
-	<script>
-	function doSearch(){
-		$('#dg').datagrid('reload',{
-			sID: $('#sID').val(),
-			sType: $('#sType').val(),
-			sBrand: $('#sBrand').val(),
-			sModel: $('#sModel').val(),
-			sNumber: $('#sNumber').val(),
-			sNetWork: $('#sNetWork').val(),
-			sSource: $('#sSource').val(),
-			sPurchaseDateS: $('#sPurchaseDateS').val(),
-			sPurchaseDateE: $('#sPurchaseDateE').val(),
-			sUseDateS: $('#sUseDateS').val(),
-			sUseDateE: $('#sUseDateE').val(),
-			sName: $('#sName').val(),
-			sDepartment: $('#sDepartment').val(),
-			sState: $('#sState').val()
-		});
-	}
-	</script>
-	<script>
-	function clearSearch(){
-		$('#ff').form('clear');
-		doSearch();
-	}
-	</script>
-	<script>
-	function doImport(){
-		$('#dlg2').dialog('open').dialog('setTitle','导入表格');
-	}
-	</script>
-	<script>
-	function tableImport(){
-		$('#fm2').form('submit', {
-			url:"/ITCenter/index.php/Home/Allocation/tableImport",
-			success:function(data){
-				if(data=='error_fileType'){
-					$.messager.show({
-						title: '错误提示',
-						msg: '上传文件后缀不是xlsx！'
-					});
-					$('#dlg2').dialog('close');
-				}else if(data=='error_fileUpload'){
-					$.messager.show({
-						title: '错误提示',
-						msg: '上传文件失败！'
-					});
-					$('#dlg2').dialog('close');
-				}else if(data=='error_writeMysql'){
-					$.messager.show({
-						title: '错误提示',
-						msg: '数据写库失败！'
-					});
-					$('#dlg2').dialog('close');
-				}else if(data=='error_fileEmpty'){
-					$.messager.show({
-						title: '错误提示',
-						msg: '请选择上传的文件！'
-					});
-					$('#dlg2').dialog('close');
-				}else{
-					$('#dg').datagrid('reload');
-					$.messager.show({
-						title: '错误提示',
-						msg: '成功导入'+data+'条数据！'
-					});
-					$('#dlg2').dialog('close');
-				}
-			}
-		});
-	}
-	</script>
-	<script>
-	function doExport(){
-		var conditions = {
-			sID: $('#sID').val(),
-			sType: $('#sType').val(),
-			sBrand: $('#sBrand').val(),
-			sModel: $('#sModel').val(),
-			sNumber: $('#sNumber').val(),
-			sNetWork: $('#sNetWork').val(),
-			sSource: $('#sSource').val(),
-			sPurchaseDateS: $('#sPurchaseDateS').val(),
-			sPurchaseDateE: $('#sPurchaseDateE').val(),
-			sUseDateS: $('#sUseDateS').val(),
-			sUseDateE: $('#sUseDateE').val(),
-			sName: $('#sName').val(),
-			sDepartment: $('#sDepartment').val(),
-			sState: $('#sState').val()
-		};
-		
-		$.post("/ITCenter/index.php/Home/Allocation/tableExport",conditions,function(result){
-			if(result.success) {
-				$('#downLoadButton').attr("href","http://localhost/itcenter/ExpImp/Export/"+result.fileName); 
-				$('#dlg1').dialog('open').dialog('setTitle','下载表格');
-			} else {
-				$.messager.show({
-					title: '错误提示',
-					msg: result.errorMsg
-				});
-			}
-		});
-	}
-	</script>
-	<script>
-	function getAssetData(){
-		var aAssetID = $("#aAssetID").textbox('getValue');
-		$.post("/ITCenter/index.php/Home/Allocation/getAssetData",{'id':aAssetID},function(result){
-			if(result.success) {
-				$('#fm').form('load',{
-					aType:result.data['type'],
-					aBrand:result.data['brand'],
-					aModel:result.data['model'],
-					aNumber:result.data['number'],
-					aNetWork:result.data['network'],
-					aSource:result.data['source'],
-					aState:result.data['state'],
-					sPurchaseDate:result.data['purchase_date']
-				});
-			} else {
-				$.messager.show({
-					title: '错误提示',
-					msg: result.errorMsg
-				});
-			}
-		});
-	}
-	</script>
-	<script>
-	function getUserData(){
-		var aName = $("#aName").combobox('getText');
-		$.post("/ITCenter/index.php/Home/Allocation/getUserData",{'name':aName},function(result){
-			if(result.success) {
-				$('#fm').form('load',{
-					aUserID:result.data['id'],
-					aDepartment:result.data['department'],
-					aJob:result.data['job'],
-					aOfficePhone:result.data['office_phone'],
-					aMobilePhone:result.data['mobile_phone']
-				});
-			} else {
-				$.messager.show({
-					title: '错误提示',
-					msg: result.errorMsg
-				});
-			}
-		});
-	}
-	</script>
-
-	<script>
-		function newAllocation(){
-			$('#fm').form('clear');
-			$('#aOperation').val('add');
-			$('#dlg').dialog('open').dialog('setTitle','添加资产配置');
-		}
-	</script>
-	<script>
-		function saveAllocation(){
-			$('#aAssetID').textbox('enable');
-			$.post("/ITCenter/index.php/Home/Allocation/allocationSave",$('#fm').serialize(),function(result){
-				if(result.success) {
-					$('#dg').datagrid('reload');
-					$('#dlg').dialog('close');
-				} else {
-					$.messager.show({
-						title: '错误提示',
-						msg: result.errorMsg
-					});
-				}
-			});
-
-		}
-	</script>
-	
-	<script>
-		function destroyAllocation(){
-			var row = $('#dg').datagrid('getSelected');
-			if (row){
-				$.messager.confirm('操作提示','是否确定删除此项数据？',function(r){
-					if (r){
-						$.post('/ITCenter/index.php/Home/Allocation/allocationDestroy',{id:row.id},function(result){
-							if (result.success){
-								$('#dg').datagrid('reload');
-							} else {
-								$.messager.show({
-									title: '错误提示',
-									msg: result.errorMsg
-								});
-							}
-						},'json');
-					}
-				});
-			}
-		}
-	</script>
-	<script>		
-		function editAllocation(){
-			$('#aAssetID').textbox('disable');
-			var row = $('#dg').datagrid('getSelected');
-			$.post("/ITCenter/index.php/Home/Allocation/allocationEdit",row,function(result){
-				if(result.success) {
-					$('#aOperation').val('edit');
-					$('#fm').form('load',{
-						aID:result.data['id'],
-					    aType:result.data['type'],
-					    aBrand:result.data['brand'],
-					    aModel:result.data['model'],
-					    aNumber:result.data['number'],
-						aNetWork:result.data['network'],
-						aSource:result.data['source'],
-					    aState:result.data['state'],
-						sPurchaseDate:result.data['purchase_date'],
-						aRemark:result.data['allocation_remark'],
-					    aName:result.data['name'],
-					    aDepartment:result.data['department'],
-					    aJob:result.data['job'],
-					    aOfficePhone:result.data['office_phone'],
-						aMobilePhone:result.data['mobile_phone'],
-						aUseDate:result.data['use_date'],
-						aUserID:result.data['user_id'],
-						aAssetID:result.data['asset_id']
-					});
-					$('#dlg').dialog('open').dialog('setTitle','修改资产配置');
-				} else {
-					$.messager.show({
-						title: '错误提示',
-						msg: result.errorMsg
-					});
-				}
-			});
-		}
-	</script>
-	<script type="text/javascript">    
-		function closeLoading() {    
-			$("#loadingDiv").fadeOut("normal", function () {    
-				$(this).remove();    
-			});    
-		}    
-		
-		var no;    
-		$.parser.onComplete = function () {    
-			if (no) clearTimeout(no);    
-			no = setTimeout(closeLoading, 1000);    
-		}            
-	</script>
 
 	</div>
 </body>

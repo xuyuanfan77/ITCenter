@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="/itcenter/Public/easyUI/jquery.min.js"></script>
 	<script type="text/javascript" src="/itcenter/Public/easyUI/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="/itcenter/Public/easyUI/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="/itcenter/Public/common.js"></script>
 </head>
 
 <body class="easyui-layout">
