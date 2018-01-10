@@ -66,7 +66,6 @@
 					<td>资产编号：</td>
 					<td>
 						<input id="sID" class="easyui-combobox" type="text" name="sID"
-							panelHeight="auto"
 							valueField="id" 
 							textField="id" 
 							url="<?php echo U('Asset/getAssetIdList');?>">
@@ -175,19 +174,19 @@
 		pagination="true">
 		<thead>
 			<tr>
-				<th data-options="field:'asset_id',width:'40'">资产编号</th>
+				<th data-options="field:'asset_id',width:'40',sortable:'true'">资产编号</th>
 				<th data-options="field:'type',width:'40'">类型</th>
 				<th data-options="field:'brand',width:'40'">品牌</th>
 				<th data-options="field:'model',width:'40'">型号</th>
 				<th data-options="field:'number',width:'40'">序列号</th>
 				<th data-options="field:'network',width:'40'">接入网络</th>
 				<th data-options="field:'state',width:'40'">资产状态</th>
-				<th data-options="field:'purchase_date',width:'40'">购置日期</th>
+				<th data-options="field:'purchase_date',width:'40',sortable:'true'">购置日期</th>
 				<th data-options="field:'name',width:'40'">使用人</th>
 				<th data-options="field:'department',width:'40'">部门</th>
 				<th data-options="field:'office_phone',width:'40'">办公电话</th>
 				<th data-options="field:'mobile_phone',width:'40'">移动电话</th>
-				<th data-options="field:'use_date',width:'40'">分配日期</th>
+				<th data-options="field:'use_date',width:'40',sortable:'true'">分配日期</th>
 			</tr>
 		</thead>
 	</table>

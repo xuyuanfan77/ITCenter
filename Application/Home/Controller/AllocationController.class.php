@@ -61,8 +61,10 @@ class AllocationController extends CommonController {
 		$condition = $this->getCondition();
 		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;  
 		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		$sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'allocation_create_date';
+		$order = isset($_POST['order']) ? strval($_POST['order']) : 'desc';
 		$allocation = D('AllocationView');
-		$allocationList = $allocation->where($condition)->order('allocation_create_date desc')->page($page.','.$rows)->select();
+		$allocationList = $allocation->where($condition)->order($sort.' '.$order)->page($page.','.$rows)->select();
 		$allocationListData = array();
 		foreach($allocationList as $k=>$v){
 			$v['type'] = $allOptionText[$v['type']]['option_name'];

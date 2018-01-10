@@ -61,8 +61,10 @@ class AssetController extends CommonController {
 		$condition = $this->getCondition();
 		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;  
 		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		$sort = isset($_POST['sort']) ? strval($_POST['sort']) : 'create_date';
+		$order = isset($_POST['order']) ? strval($_POST['order']) : 'desc';
 		$asset = M('Asset');
-		$assetList = $asset->where($condition)->order('create_date desc')->page($page.','.$rows)->select();
+		$assetList = $asset->where($condition)->order($sort.' '.$order)->page($page.','.$rows)->select();
 		$assetListData = array();
 		foreach($assetList as $k=>$v){
 			$v['type'] = $allOptionText[$v['type']]['option_name'];
