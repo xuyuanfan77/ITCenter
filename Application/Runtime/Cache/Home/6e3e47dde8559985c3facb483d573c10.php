@@ -85,9 +85,9 @@
 							textField="option_name" 
 							url="<?php echo U('Asset/getOptionData',array('type'=>2));?>">
 					</td>
-					<td>型号：</td>
+					<td>序列号：</td>
 					<td>
-						<input id="sModel" class="easyui-textbox" type="text" name="sModel"></input>
+						<input id="sNumber" class="easyui-textbox" type="text" name="sNumber"></input>
 					</td>
 					<td>接入网络：</td>
 					<td>
