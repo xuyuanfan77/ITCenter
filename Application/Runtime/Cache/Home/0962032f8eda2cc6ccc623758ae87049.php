@@ -57,62 +57,21 @@
 	</div>
 	<div data-options="region:'center'" style="border:0px">
 		
-	<script type="text/javascript" src="/itcenter/Public/log.js"></script>
-	<div class="easyui-panel" title="条件筛选" style="width:100%;padding:15px">
-		<form id="sForm" method="post">
-			<table cellpadding="5">
-				<tr>
-					<td>日志类型：</td>
-					<td>
-						<select id="sType" class="easyui-combobox" name="sType" style="width:200px;" panelHeight="auto" editable="false">
-							<option value="">全部</option>
-							<option value="1">配置</option>
-							<option value="2">资产</option>
-							<option value="3">人员</option>
-						</select>
-					</td>
-					<td>记录日期(S)：</td>
-					<td>
-						<input id="sCreateDateS" class="easyui-datetimebox" style="width:200px" editable="false" data-options="sharedCalendar:'#calendar'">
-					</td>
-					<td>记录日期(E)：</td>
-					<td>
-						<input id="sCreateDateE" class="easyui-datetimebox" style="width:200px" editable="false" data-options="sharedCalendar:'#calendar'">
-					</td>
-					<td>
-						<div>
-							<a class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="doSearch()">搜索</a>
-							<a class="easyui-linkbutton" style="height:25px;padding:0px 5px" onclick="clearSearch()">清空</a>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</form>
-	</div>
-	
-	<table id="cDatagrid" title="日志列表" class="easyui-datagrid"
-		url="<?php echo U('Log/getLogListData');?>" 
-		toolbar="#toolbar"
+	<script type="text/javascript" src="/itcenter/Public/assetTable.js"></script>
+
+	<table id="cDatagrid" title="资产报表" class="easyui-datagrid"
+		toolbar="#toolbar"		
 		rownumbers="true" 
 		fitColumns="true" 
-		singleSelect="true"
-		pageSize="20"
-		pagination="true">
-		<thead>
-			<tr>
-				<th data-options="field:'type',width:'5'">类型</th>
-				<th data-options="field:'text',width:'85'">内容</th>
-				<th data-options="field:'create_date',width:'10'">时间</th>
-			</tr>
-		</thead>
-	</table>
-
-	<div id="calendar" class="easyui-calendar"></div>
+		singleSelect="true"></table>
+	<div id="toolbar">
+		<a class="easyui-linkbutton" iconCls="icon-redo" plain="true" onclick="newAsset()">导出</a>
+		<a class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="editAsset()">打印</a>
+	</div>
+	
 	<div id='loadingDiv' style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: white; text-align: center;">    
-		<h1 style="top: 48%; position: relative;">    
-			<font color="#15428B">努力加载中···</font>    
-		</h1>    
-	</div> 
+		<h1 style="top: 48%; position: relative;">努力加载中···</h1>    
+	</div>
 
 	</div>
 </body>

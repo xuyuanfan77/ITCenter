@@ -15,7 +15,7 @@
 
 <body class="easyui-layout">
 	<div id="north" data-options="region:'north'" style="height:100px;">
-		<h1 id="title">固定资产管理系统</h1>
+		<h1 id="title">廉江市国税局固定资产管理系统</h1>
 		
 	</div>
 	<div id="south" data-options="region:'south'" style="height:50px;"></div>
@@ -35,9 +35,8 @@
 					<li>
 						<span>资产报表</span>
 						<ul>
-							<li>配置报表</li>
-							<li>资产报表</li>
-							<li>人员报表</li>
+							<li><a style="text-decoration:none" href="<?php echo U('AllocationTable/index');?>">配置报表</a></li>
+							<li><a style="text-decoration:none" href="<?php echo U('AssetTable/index');?>">资产报表</a></li>
 						</ul>
 					</li>
 					<li>
