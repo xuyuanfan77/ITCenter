@@ -6,8 +6,8 @@ $(function(){
 			dataType:'json',
 			success:function(data){
 				var colData = [];
-				colData[0] = {'field':'type','title':'类型','align':'center','width':'10%'};
-				colData[1] = {'field':'brand','title':'品牌','align':'center','width':'10%'};
+				colData[0] = {'field':'type','title':'类型','align':'center','width':'7%'};
+				colData[1] = {'field':'brand','title':'品牌','align':'center','width':'7%'};
 				var index = 2;
 				for (k in data){
 					colData[index] = {'field':'field'+data[k]['year'],'title':data[k]['year']+'年','align':'center','width':'7%'};
@@ -19,6 +19,21 @@ $(function(){
 				var gridCfg = {
 					columns : columns,
 					url : "/ITCenter/index.php/Home/AssetTable/getAssetTableData",
+					onLoadSuccess : function(data){
+						var mark = 1;
+						for(var i=1; i<data.rows.length; i++){
+							if(data.rows[i]['type']==data.rows[i-1]['type']){
+								mark += 1;
+								$(this).datagrid('mergeCells',{
+									index:i+1-mark,
+									field:'type',
+									rowspan:mark
+								})
+							}else{
+								mark=1;
+							}
+						}
+					}
 				};
 				$('#cDatagrid').datagrid(gridCfg);
 			},
@@ -43,10 +58,10 @@ function doExport(){
 		sPurchaseDateE: $('#sPurchaseDateE').val()
 	};
 	
-	$.post("/ITCenter/index.php/Home/Asset/tableExport",conditions,function(result){
+	$.post("/ITCenter/index.php/Home/AssetTable/tableExport",conditions,function(result){
 		if(result.success) {
 			$('#downLoadButton').attr("href","http://localhost/itcenter/ExpImp/Export/"+result.fileName); 
-			$('#dialog2').dialog('open').dialog('setTitle','下载表格');
+			$('#dialog1').dialog('open').dialog('setTitle','下载表格');
 		} else {
 			$.messager.show({
 				title: '错误提示',

@@ -25,8 +25,16 @@ class AssetTableController extends CommonController {
 		$tableData = array();
 		foreach($assetTableData as $x=>$y){
 			foreach($y as $i=>$j){
-				$j['type'] = $allOptionText[$x]['option_name'];
-				$j['brand'] = $allOptionText[$i]['option_name'];
+				if($allOptionText[$x]['option_name']){
+					$j['type'] = $allOptionText[$x]['option_name'];
+				}else{
+					$j['type'] = '未知';
+				}
+				if($allOptionText[$i]['option_name']){
+					$j['brand'] = $allOptionText[$i]['option_name'];
+				}else{
+					$j['brand'] = '未知';
+				}
 				array_push($tableData,$j);
 			}
 		}
@@ -36,47 +44,67 @@ class AssetTableController extends CommonController {
 	public function tableExport(){
 		Vendor("PHPExcel.PHPExcel");
 		$objPHPExcel = new \PHPExcel();
+		$Model = new \Think\Model();
 		
-		// 设置表头部
-		$objPHPExcel->setActiveSheetIndex(0)
-					->setCellValue('A1', '资产编号')
-					->setCellValue('B1', '类型')
-					->setCellValue('C1', '品牌')
-					->setCellValue('D1', '型号')
-					->setCellValue('E1', '序列号')
-					->setCellValue('F1', '接入网络')
-					->setCellValue('G1', '设备来源')
-					->setCellValue('H1', '资产状态')
-					->setCellValue('I1', '购置日期')
-					->setCellValue('J1', '备注');;
+		// 生成标题数据
+		$titleData = array();
+		$titleData['type'] = array('title'=>'类型','index'=>'A');
+		$titleData['brand'] = array('title'=>'品牌','index'=>'B');
+		$letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		
-		// 设置表内容
+		$assetPurchaseDates = $Model->query("SELECT substring(purchase_date,1,4) as year FROM asset GROUP BY substring(purchase_date,1,4);");
 		$index = 2;
-		$asset = M('Asset');
-		$condition = $this->getCondition();		
-		$assetList = $asset->where($condition)->order('create_date desc')->select();
+		foreach($assetPurchaseDates as $k=>$v){
+			$titleData[$v['year']] = array('title'=>$v['year'],'index'=>$letter[$index]);
+			$index++;
+		}
+		$titleData['sum'] = array('title'=>'合计','index'=>$letter[$index]);
+		
+		// 写入Excel标题
+		foreach($titleData as $k=>$v){
+			$objPHPExcel->setActiveSheetIndex(0)->setCellValue($v['index'].'1', $v['title']);
+		}
+		
+		// 生成内容数据
+		$assetTableListData = $Model->query("SELECT type,brand,substring(purchase_date,1,4) as year,count(*) as count FROM asset GROUP BY substring(purchase_date,1,4),type,brand ORDER BY type,brand,year;");
+		$assetTableData = array();
+		foreach($assetTableListData as $k=>$v){
+			$assetTableData[$v['type']][$v['brand']][$v['year']] = $v['count'];
+			$assetTableData[$v['type']][$v['brand']]['sum'] += $v['count'];
+		}
+		
 		$allOptionText = $this->getAllOptionText();
-		foreach($assetList as $k=>$v){
-			$objPHPExcel->setActiveSheetIndex(0)
-					->setCellValue('A'.$index, $v['id'])
-					->setCellValue('B'.$index, $allOptionText[$v['type']]['option_name'])
-					->setCellValue('C'.$index, $allOptionText[$v['brand']]['option_name'])
-					->setCellValue('D'.$index, $v['model'])
-					->setCellValue('E'.$index, $v['number'])
-					->setCellValue('F'.$index, $allOptionText[$v['network']]['option_name'])
-					->setCellValue('G'.$index, $allOptionText[$v['source']]['option_name'])
-					->setCellValue('H'.$index, $allOptionText[$v['state']]['option_name'])
-					->setCellValue('I'.$index, $v['purchase_date'])
-					->setCellValue('J'.$index, $v['remark']);
+		$tableData = array();
+		foreach($assetTableData as $x=>$y){
+			foreach($y as $i=>$j){
+				if($allOptionText[$x]['option_name']){
+					$j['type'] = $allOptionText[$x]['option_name'];
+				}else{
+					$j['type'] = '未知';
+				}
+				if($allOptionText[$i]['option_name']){
+					$j['brand'] = $allOptionText[$i]['option_name'];
+				}else{
+					$j['brand'] = '未知';
+				}
+				array_push($tableData,$j);
+			}
+		}
+		// 写入Excel内容
+		$index = 2;
+		foreach($tableData as $x=>$y){
+			foreach($y as $i=>$j){
+				$objPHPExcel->setActiveSheetIndex(0)->setCellValue($titleData[$i]['index'].$index, $j);
+			}
 			$index++;
 		}
 
 		// 设置表名
-		$objPHPExcel->getActiveSheet()->setTitle('资产列表');
+		$objPHPExcel->getActiveSheet()->setTitle('资产报表');
 
 		Vendor("PHPExcel.PHPExcel.IOFactory");
 		$objWriter = \PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel2007');
-		$fileName = 'Asset'.date('YmdHis').'.xlsx';
+		$fileName = 'AssetTable'.date('YmdHis').'.xlsx';
 		$objWriter->save('./ExpImp/Export/' . $fileName);
 		
 		$result = array('success'=>true,'fileName'=>$fileName);

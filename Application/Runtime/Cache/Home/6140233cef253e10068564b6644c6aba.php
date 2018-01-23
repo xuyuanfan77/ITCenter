@@ -16,7 +16,6 @@
 <body class="easyui-layout">
 	<div id="north" data-options="region:'north'" style="height:100px;">
 		<h1 id="title">廉江市国税局固定资产管理系统</h1>
-		
 	</div>
 	<div id="south" data-options="region:'south'" style="height:50px;"></div>
 	<div data-options="region:'west'" title="目录" style="width:240px;">

@@ -136,7 +136,8 @@
 						editable="false"
 						valueField="id" 
 						textField="option_name" 
-						url="{:U('Asset/getOptionData',array('type'=>2))}">
+						url="{:U('Asset/getOptionData',array('type'=>2))}"
+						data-options="required:true,missingMessage:'必填'">
 					</td>
 					<td>型号：</td>
 					<td>

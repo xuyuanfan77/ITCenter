@@ -29,6 +29,17 @@ class CommonController extends Controller {
 		return $allOptionText;
 	}
 	
+	protected function getPartOptionText($type){
+		$option = M('option');
+		$condition['type'] = $type;
+		$optionData = $option->where($condition)->field('id,option_name')->select();
+		$allOptionText = array();
+		foreach($optionData as $k=>$v){
+			$allOptionText[$v['id']] = $v;
+		}
+		return $allOptionText;
+	}
+	
 	protected function getPartOptionIdAndText($type){
 		$option = M("option");
 		$condition['type'] = $type;

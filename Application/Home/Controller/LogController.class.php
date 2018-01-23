@@ -45,7 +45,8 @@ class LogController extends CommonController {
 			}
 			array_push($logListData,$data); 
 		}
-		$logListData = array('total'=>count($logListData),'rows'=>$logListData);
+		$logCount = $log->where($condition)->count();
+		$logListData = array('total'=>$logCount,'rows'=>$logListData);
 		$this->ajaxReturn($logListData);
     }
 }

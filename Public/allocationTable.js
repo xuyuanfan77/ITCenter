@@ -9,10 +9,10 @@ $(function(){
 			},
 			success:function(data){
 				var colData = [];
-				colData[0] = {'field':'department','title':'部门','align':'center','width':'12%'};
+				colData[0] = {'field':'department','title':'部门','align':'center','width':'15%'};
 				var index = 1;
 				for (k in data){
-					colData[index] = {'field':'field'+data[k]['id'],'title':data[k]['option_name'],'align':'center','width':'8%'};
+					colData[index] = {'field':'field'+data[k]['id'],'title':data[k]['option_name'],'align':'center','width':'6%'};
 					index++;
 				}
 				var columns = new Array();
@@ -31,23 +31,12 @@ $(function(){
 })
 
 function doExport(){
-	var conditions = {
-		sID: $('#sID').val(),
-		sType: $('#sType').val(),
-		sBrand: $('#sBrand').val(),
-		sModel: $('#sModel').val(),
-		sNumber: $('#sNumber').val(),
-		sNetWork: $('#sNetWork').val(),
-		sSource: $('#sSource').val(),
-		sState: $('#sState').val(),
-		sPurchaseDateS: $('#sPurchaseDateS').val(),
-		sPurchaseDateE: $('#sPurchaseDateE').val()
-	};
+	var conditions = {};
 	
-	$.post("/ITCenter/index.php/Home/Asset/tableExport",conditions,function(result){
+	$.post("/ITCenter/index.php/Home/AllocationTable/tableExport",conditions,function(result){
 		if(result.success) {
 			$('#downLoadButton').attr("href","http://localhost/itcenter/ExpImp/Export/"+result.fileName); 
-			$('#dialog2').dialog('open').dialog('setTitle','下载表格');
+			$('#dialog1').dialog('open').dialog('setTitle','下载表格');
 		} else {
 			$.messager.show({
 				title: '错误提示',

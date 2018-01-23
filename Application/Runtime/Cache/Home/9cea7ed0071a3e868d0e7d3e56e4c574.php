@@ -16,7 +16,6 @@
 <body class="easyui-layout">
 	<div id="north" data-options="region:'north'" style="height:100px;">
 		<h1 id="title">廉江市国税局固定资产管理系统</h1>
-		
 	</div>
 	<div id="south" data-options="region:'south'" style="height:50px;"></div>
 	<div data-options="region:'west'" title="目录" style="width:240px;">
@@ -58,6 +57,7 @@
 	<div data-options="region:'center'" style="border:0px">
 		
 	<script type="text/javascript" src="/itcenter/Public/log.js"></script>
+
 	<div class="easyui-panel" title="条件筛选" style="width:100%;padding:15px">
 		<form id="sForm" method="post">
 			<table cellpadding="5">
@@ -89,7 +89,8 @@
 			</table>
 		</form>
 	</div>
-	
+	<div id="calendar" class="easyui-calendar"></div>
+
 	<table id="cDatagrid" title="日志列表" class="easyui-datagrid"
 		url="<?php echo U('Log/getLogListData');?>" 
 		toolbar="#toolbar"
@@ -106,13 +107,12 @@
 			</tr>
 		</thead>
 	</table>
-
-	<div id="calendar" class="easyui-calendar"></div>
+	
 	<div id='loadingDiv' style="position: absolute; z-index: 1000; top: 0px; left: 0px; width: 100%; height: 100%; background: white; text-align: center;">    
 		<h1 style="top: 48%; position: relative;">    
 			<font color="#15428B">努力加载中···</font>    
 		</h1>    
-	</div> 
+	</div>
 
 	</div>
 </body>
