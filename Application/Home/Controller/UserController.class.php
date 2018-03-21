@@ -19,10 +19,10 @@ class UserController extends CommonController {
 			$condition['job'] = $_POST['sJob'];
 		}
 		if($_POST['sOfficePhone']){
-			$condition['office_phone'] = $_POST['sOfficePhone'];
+			$condition['office_phone'] = array('like','%'.$_POST['sOfficePhone'].'%');//$_POST['sOfficePhone'];
 		}
 		if($_POST['sMobilePhone']){
-			$condition['mobile_phone'] = $_POST['sMobilePhone'];
+			$condition['mobile_phone'] = array('like','%'.$_POST['sMobilePhone'].'%');//$_POST['sMobilePhone'];
 		}
 		return $condition;
 	}

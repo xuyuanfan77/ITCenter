@@ -18,10 +18,10 @@ class AssetController extends CommonController {
 			$condition['brand'] = $_POST['sBrand'];
 		}
 		if($_POST['sModel']){
-			$condition['model'] = $_POST['sModel'];
+			$condition['model'] = array('like','%'.$_POST['sModel'].'%');//$_POST['sModel'];
 		}
 		if($_POST['sNumber']){
-			$condition['number'] = $_POST['sNumber'];
+			$condition['number'] = array('like','%'.$_POST['sNumber'].'%');//$_POST['sNumber'];
 		}
 		if($_POST['sNetWork']){
 			$condition['network'] = $_POST['sNetWork'];
